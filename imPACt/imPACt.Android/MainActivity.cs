@@ -6,6 +6,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+
 
 namespace imPACt.Droid
 {
@@ -19,6 +23,10 @@ namespace imPACt.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            AppCenter.Start("721263eb-9e5d-4ad0-94dd-3130e25872db",
+                typeof(Analytics), typeof(Crashes));// Handle when your app starts
+
             LoadApplication(new App());
         }
     }
