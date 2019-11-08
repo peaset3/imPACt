@@ -5,10 +5,6 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
-
 namespace imPACt.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -28,8 +24,6 @@ namespace imPACt.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
-            AppCenter.Start("{7fa1734b-114a-4327-908a-3ab09d521ea3}", typeof(Analytics), typeof(Crashes));
 
             return base.FinishedLaunching(app, options);
         }
