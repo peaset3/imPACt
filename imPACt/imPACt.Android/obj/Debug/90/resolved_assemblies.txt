@@ -1,13 +1,17 @@
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\imPACt.Android.dll
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\Firebase.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\FormsViewGroup.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\imPACt.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\Java.Interop.dll
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\LiteDB.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\Mono.Android.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\mscorlib.dll
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.Core.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.Numerics.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.Numerics.Vectors.dll
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.Reactive.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.Runtime.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.Xml.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.Xml.Linq.dll
@@ -65,3 +69,4 @@ C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\as
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.ServiceModel.Internals.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.Web.Services.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\Mono.Security.dll
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\assets\System.Runtime.InteropServices.WindowsRuntime.dll

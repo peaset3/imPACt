@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="imPACt.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name = "Email" Placeholder = "Email" Text="{Binding Email}"  
+                   HeightRequest = "40"  
+                   Keyboard = "Email"/>
+            <Entry x:Name = "Password" Text="{Binding Password}" Placeholder = "Password"  
+                   HeightRequest = "40"  
+                   IsPassword = "True"/>
+            <Button x:Name= "loginbtn" Text = "Login "   
+                    Command="{Binding LoginCommand}"  
+                    HorizontalOptions = "FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 
