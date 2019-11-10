@@ -34,6 +34,14 @@ namespace imPACt.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
+
+        private string school;
+
+        public string School
+        {
+            get { return school; }
+            set { school = value; }
+        }
         public Command UpdateCommand
         {
             get { return new Command(Update); }

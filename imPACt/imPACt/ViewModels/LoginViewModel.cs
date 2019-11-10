@@ -35,6 +35,17 @@ namespace imPACt.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
+
+        private string surname;
+        public string Surname
+        {
+            get { return surname; }
+            set
+            {
+                password = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Surname"));
+            }
+        }
         public Command LoginCommand
         {
             get
@@ -61,7 +72,7 @@ namespace imPACt.ViewModels
                         await App.Current.MainPage.DisplayAlert("Login Success", "", "Ok");
                         //Navigate to Wellcom page after successfuly login    
                         //pass user email to welcom page    
-                        await App.Current.MainPage.Navigation.PushAsync(new WelcomePage(Email));
+                        await App.Current.MainPage.Navigation.PushAsync(new WelcomePage(Surname));
                     }
                     else
                         await App.Current.MainPage.DisplayAlert("Login Fail", "Please enter correct Email and Password", "OK");

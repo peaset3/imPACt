@@ -15,10 +15,10 @@ namespace imPACt.Views
     {
 
         WelcomePageViewModel welcomePageVM;
-        public WelcomePage(string email)
+        public WelcomePage(string surname)
         {
             InitializeComponent();
-            welcomePageVM = new WelcomePageViewModel(email);
+            welcomePageVM = new WelcomePageViewModel(surname);
             BindingContext = welcomePageVM;
         }
     }

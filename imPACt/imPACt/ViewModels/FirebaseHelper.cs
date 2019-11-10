@@ -25,7 +25,8 @@ namespace imPACt.ViewModels
                 new User
                 {
                     Email = item.Object.Email,
-                    Password = item.Object.Password
+                    Password = item.Object.Password,
+                    Surname = item.Object.Surname
                 }).ToList();
                 return userlist;
             }
@@ -55,7 +56,7 @@ namespace imPACt.ViewModels
         }
 
         //Inser a user    
-        public static async Task<bool> AddUser(string email, string password)
+        public static async Task<bool> AddUser(string email, string password, string surname)
         {
             try
             {
@@ -63,7 +64,7 @@ namespace imPACt.ViewModels
 
                 await firebase
                 .Child("Users")
-                .PostAsync(new User() { Email = email, Password = password });
+                .PostAsync(new User() { Email = email, Password = password, Surname = surname });
                 return true;
             }
             catch (Exception e)
@@ -87,6 +88,28 @@ namespace imPACt.ViewModels
                 .Child("Users")
                 .Child(toUpdateUser.Key)
                 .PutAsync(new User() { Email = email, Password = password });
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Error:{e}");
+                return false;
+            }
+        }
+
+        public static async Task<bool> UpdateUserSchool(string email, string school, string degree)
+        {
+            try
+            {
+
+
+                var toUpdateUser = (await firebase
+                .Child("Users")
+                .OnceAsync<User>()).Where(a => a.Object.Email == email).FirstOrDefault();
+                await firebase
+                .Child("Users")
+                .Child(toUpdateUser.Key)
+                .PutAsync(new User() { School = school, Degree = degree });
                 return true;
             }
             catch (Exception e)
