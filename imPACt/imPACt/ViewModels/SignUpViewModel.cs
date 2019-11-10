@@ -72,7 +72,7 @@ namespace imPACt.ViewModels
                 if (user)
                 {
                     await App.Current.MainPage.DisplayAlert("SignUp Success", "", "Ok");
-                    //Navigate to Wellcom page after successfuly SignUp    
+                    //Navigate to Welcome page after successfuly SignUp    
                     //pass user email to welcom page    
                     await App.Current.MainPage.Navigation.PushAsync(new WelcomePage(Email));
                 }

@@ -12,7 +12,7 @@ namespace imPACt.ViewModels
 {
     class FirebaseHelper
     {
-        public static FirebaseClient firebase = new FirebaseClient("https://impact-de4e1.firebaseio.com/users");
+        public static FirebaseClient firebase = new FirebaseClient("https://impact-de4e1.firebaseio.com/");
 
         //Read All    
         public static async Task<List<User>> GetAllUser()
