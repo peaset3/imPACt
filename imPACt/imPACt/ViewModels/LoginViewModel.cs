@@ -72,7 +72,7 @@ namespace imPACt.ViewModels
                         await App.Current.MainPage.DisplayAlert("Login Success", "", "Ok");
                         //Navigate to Wellcom page after successfuly login    
                         //pass user email to welcom page    
-                        await App.Current.MainPage.Navigation.PushAsync(new WelcomePage(Surname));
+                        await App.Current.MainPage.Navigation.PushAsync(new LandingPage(Surname));
                     }
                     else
                         await App.Current.MainPage.DisplayAlert("Login Fail", "Please enter correct Email and Password", "OK");

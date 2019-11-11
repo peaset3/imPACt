@@ -12,5 +12,6 @@ C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt
 C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
 C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
 C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\SignUpPage.xaml.g.cs
-C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\WelcomePage.xaml.g.cs
 C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\EditProfilePage.xaml.g.cs
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\LandingPage.xaml.g.cs

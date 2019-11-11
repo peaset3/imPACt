@@ -119,7 +119,7 @@ namespace imPACt.ViewModels
                     await App.Current.MainPage.DisplayAlert("SignUp Success", "", "Ok");
                     //Navigate to Welcome page after successfuly SignUp    
                     //pass user email to welcom page    
-                    await App.Current.MainPage.Navigation.PushAsync(new WelcomePage(Surname));
+                    await App.Current.MainPage.Navigation.PushAsync(new LandingPage(Surname));
                 }
                 else
                     await App.Current.MainPage.DisplayAlert("Error", "SignUp Fail", "OK");
