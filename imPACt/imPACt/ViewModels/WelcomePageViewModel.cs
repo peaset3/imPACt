@@ -69,7 +69,7 @@ namespace imPACt.ViewModels
             {
                 if (!string.IsNullOrEmpty(Password))
                 {
-                    var isupdate = await FirebaseHelper.UpdateUser(Email, Password);
+                    var isupdate = await FirebaseHelper.UpdateUserPassword(Email, Password);
                     if (isupdate)
                         await App.Current.MainPage.DisplayAlert("Update Success", "", "Ok");
                     else

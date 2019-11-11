@@ -56,7 +56,7 @@ namespace imPACt.ViewModels
         }
 
         //Inser a user    
-        public static async Task<bool> AddUser(string email, string password, string surname)
+        public static async Task<bool> AddUser(string email, string password, string surname, string lastname, string school, string degree)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace imPACt.ViewModels
 
                 await firebase
                 .Child("Users")
-                .PostAsync(new User() { Email = email, Password = password, Surname = surname });
+                .PostAsync(new User() { Email = email, Surname = surname, Lastname = lastname, School = school, Degree = degree, Password = password, });
                 return true;
             }
             catch (Exception e)
@@ -75,7 +75,7 @@ namespace imPACt.ViewModels
         }
 
         //Update     
-        public static async Task<bool> UpdateUser(string email, string password)
+        public static async Task<bool> UpdateUserPassword(string email, string password)
         {
             try
             {

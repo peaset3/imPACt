@@ -45,7 +45,16 @@ namespace imPACt.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("Surname"));
             }
         }
-
+        private string lastname;
+        public string Lastname
+        {
+            get { return lastname; }
+            set
+            {
+                lastname = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Lastname"));
+            }
+        }
         private string school;
         public string School
         {
@@ -57,6 +66,16 @@ namespace imPACt.ViewModels
             }
         }
 
+        private string degree;
+        public string Degree
+        {
+            get { return degree; }
+            set
+            {
+                degree = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Degree"));
+            }
+        }
         private string confirmpassword;
         public string ConfirmPassword
         {
@@ -84,7 +103,8 @@ namespace imPACt.ViewModels
         {
             //null or empty field validation, check weather email and password is null or empty    
 
-            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(Surname)
+                || string.IsNullOrEmpty(Lastname) || string.IsNullOrEmpty(School) || string.IsNullOrEmpty(Degree) )
                 await App.Current.MainPage.DisplayAlert("Empty Values", "Please enter Email and Password", "OK");
             else if ((Email.Substring(Email.Length - 4)) != ".edu")
                 await App.Current.MainPage.DisplayAlert("Invalid Email", "imPACt requires that you use your school's .edu email to register.", "OK");
@@ -92,7 +112,7 @@ namespace imPACt.ViewModels
             {
 
                 //call AddUser function which we define in Firebase helper class    
-                var user = await FirebaseHelper.AddUser(Email, Password, Surname);
+                var user = await FirebaseHelper.AddUser(Email, Password, Surname, Lastname, School, Degree);
                 //AddUser return true if data insert successfuly     
                 if (user)
                 {
