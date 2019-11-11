@@ -54,6 +54,17 @@ namespace imPACt.ViewModels
             }
         }
 
+        public Command SignUpCommand 
+        {
+            get 
+            { 
+                return new Command(DoSignUpPage); 
+            }
+        }
+        private async void DoSignUpPage()
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new SignUpPage());
+        }
 
         private async void Login()
         {
