@@ -99,6 +99,15 @@ namespace imPACt.ViewModels
                 });
             }
         }
+        public Command SignInCommand
+        {
+            get { return new Command(DoLoginPage); }
+
+        }
+        private async void DoLoginPage()
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new LoginPage());
+        }
         private async void SignUp()
         {
             //null or empty field validation, check weather email and password is null or empty    

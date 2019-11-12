@@ -6,20 +6,42 @@
              mc:Ignorable="d"
              x:Class="imPACt.Views.SignUpPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Entry x:Name="Emailentery" Placeholder="Email" Text="{Binding Email}" Keyboard="Email"/>
-            <Entry x:Name="passwordentery" Placeholder="Password" Text="{Binding Password}"     
-                   IsPassword="True"/>
-            <Entry x:Name="cfmpasswordentery" Placeholder="Re_Enter Password" Text="{Binding ConfirmPassword}"     
-                   IsPassword="True" />
-            
-            <Entry x:Name="Surname" Placeholder="First Name" Text="{Binding Surname}"/>
-            <Entry x:Name="Lastname" Placeholder="Last Name" Text="{Binding Lastname}"/>
-            <Entry x:Name="School" Placeholder="School Name" Text="{Binding School}"/>
-            <Entry x:Name="Degree" Placeholder="Area of Study" Text="{Binding Degree}"/>
-
-
-            <Button x:Name="signup" Text="SignUp" Command="{Binding SignUpCommand}" HorizontalOptions="Center"/>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
+            <Image Source="impact.png" HeightRequest="100" VerticalOptions="EndAndExpand" />
+            <Entry x:Name="Emailentery" Placeholder="School Email" Text="{Binding Email}" Keyboard="Email" />
+            <Entry x:Name="passwordentery" Placeholder="Password" Text="{Binding Password}" IsPassword="True" />
+            <Entry x:Name="cfmpasswordentery" Placeholder="Re-Enter Password" Text="{Binding ConfirmPassword}" IsPassword="True" />
+            <StackLayout Orientation="Horizontal">
+            <Entry x:Name="Surname" Placeholder="First Name" HorizontalOptions="FillAndExpand" Text="{Binding Surname}" />
+            <Entry x:Name="Lastname" Placeholder="Last Name" HorizontalOptions="FillAndExpand" Text="{Binding Lastname}" />
+            </StackLayout>
+            <Entry x:Name="School" Placeholder="School Name" Text="{Binding School}" />
+            <Entry x:Name="Degree" Placeholder="Area of Study" Text="{Binding Degree}" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Save Password" />
+                <Switch OnColor="#485992" IsToggled="False" />
+            </StackLayout>
+            <Button x:Name="signup" Text="SignUp" BackgroundColor="#3897F0" TextColor="White" Command="{Binding SignUpCommand}" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" />
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                <Label Text="OR" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0" />
+                <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+            </Grid>
+            <StackLayout Orientation="Horizontal" Grid.Row="6" HorizontalOptions="Center">
+                <Label x:Name="signupbtn"
+                           TextColor="#485992"
+                           FontSize="16"
+                           Text="Already have account? Sign in">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SignInCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
