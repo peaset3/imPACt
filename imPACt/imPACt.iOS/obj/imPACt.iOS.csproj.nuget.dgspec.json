@@ -42,6 +42,10 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "FirebaseAdmin": {
+              "target": "Package",
+              "version": "[1.9.1, )"
+            },
             "FirebaseDatabase.net": {
               "target": "Package",
               "version": "[4.0.4, )"
@@ -108,6 +112,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "FirebaseAdmin": {
+              "target": "Package",
+              "version": "[1.9.1, )"
+            },
             "FirebaseDatabase.net": {
               "target": "Package",
               "version": "[4.0.4, )"
