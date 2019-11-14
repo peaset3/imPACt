@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
 using Xamarin.Forms;
-
+using Plugin.FirebaseAuth;
 
 
 namespace imPACt.ViewModels
@@ -13,7 +13,19 @@ namespace imPACt.ViewModels
     {
         public EditProfileViewModel()
         {
- 
+            try
+            {
+                Email = CrossFirebaseAuth.Current.Instance.CurrentUser.Email;
+            }
+            catch(FirebaseAuthException e)
+            {
+                System.Diagnostics.Debug.WriteLine(e);
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e);
+            }
+           
         }
         private string email;
 
@@ -23,16 +35,12 @@ namespace imPACt.ViewModels
             set { email = value; }
         }
         private string password;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public string Password
         {
             get { return password; }
             set
             {
                 password = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
 
@@ -45,7 +53,7 @@ namespace imPACt.ViewModels
         }
         public Command UpdateCommand
         {
-            get { return new Command(Update); }
+            get { return new Command(UpdatePassword); }
         }
 
         public Command DeleteCommand
@@ -64,27 +72,31 @@ namespace imPACt.ViewModels
             }
         }
         //Update user data
-        private async void Update()
+        private async void UpdatePassword()
         {
-            try
+            if (!string.IsNullOrEmpty(Password))
             {
-                if (!string.IsNullOrEmpty(Password))
+                try
                 {
-                    var isupdate = await FirebaseHelper.UpdateUserPassword(Email, Password);
-                    if (isupdate)
-                        await App.Current.MainPage.DisplayAlert("Update Success", "", "Ok");
-                    else
-                        await App.Current.MainPage.DisplayAlert("Error", "Record not update", "Ok");
+                    await CrossFirebaseAuth.Current.Instance.CurrentUser.UpdatePasswordAsync(Password);
+                    await App.Current.MainPage.DisplayAlert("Update Success", "", "Ok");
                 }
-                else
-                    await App.Current.MainPage.DisplayAlert("Password Require", "Please Enter your password", "Ok");
+                catch (FirebaseAuthException e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                    var message = e.Reason ?? e.Message;
+                    await App.Current.MainPage.DisplayAlert("Error", message, "OK");
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
             }
-            catch (Exception e)
-            {
-
-                Debug.WriteLine($"Error:{e}");
-            }
+            else
+                await App.Current.MainPage.DisplayAlert("Password Require", "Please enter your new password", "Ok");
         }
+
+        
         //Delete user data
         private async void Delete()
         {

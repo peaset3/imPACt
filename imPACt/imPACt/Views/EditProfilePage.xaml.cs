@@ -17,8 +17,9 @@ namespace imPACt.Views
         EditProfileViewModel EditProfilePageVM;
         public EditProfilePage()
         {
-            InitializeComponent();
             EditProfilePageVM = new EditProfileViewModel();
+            InitializeComponent();
+            
             BindingContext = EditProfilePageVM;
         }
     }

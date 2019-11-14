@@ -5,24 +5,26 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using imPACt.Views;
+using Plugin.FirebaseAuth;
 
 
 namespace imPACt.ViewModels
 {
     class LandingPageViewModel
     {
-        public LandingPageViewModel(string name2)
-        {
-            Name = name2;
-        }
+        
+
 
         private string name;
         public string Name
         {
             get { return name; }
-            set { name = value; }
         }
 
+        public LandingPageViewModel()
+        {
+            
+        }
         public Command EditProfileCommand
         {
             get { return new Command(DoEditProfile); }

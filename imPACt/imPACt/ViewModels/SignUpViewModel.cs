@@ -125,16 +125,20 @@ namespace imPACt.ViewModels
 
                 //call AddUser function which we define in Firebase helper class    
                 try {
+                    //create new user in Firestore
                     var result = await CrossFirebaseAuth.Current.Instance.CreateUserWithEmailAndPasswordAsync(Email, Password);
 
+                    //create new User entry in Database
+                    var table = await FirebaseHelper.AddUser(Email, Surname, Lastname, School, Degree, result.User.Uid);
+
                     //AddUser return true if data insert successfuly     
-                    if (result != null)
+                    if (result != null && table)
                     {
                         await App.Current.MainPage.DisplayAlert("SignUp Success", "", "Ok");
                         //Navigate to Welcome page after successfuly SignUp    
                         //pass user email to welcom page    
                         await App.Current.MainPage.Navigation.PopToRootAsync();
-                        await App.Current.MainPage.Navigation.PushAsync(new LandingPage(Surname));
+                        await App.Current.MainPage.Navigation.PushAsync(new LandingPage());
                     }
                     else
                         await App.Current.MainPage.DisplayAlert("Error", "SignUp Fail", "OK");

@@ -14,7 +14,13 @@ namespace imPACt.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         public LoginViewModel()
         {
+        }
 
+        private IUser user;
+        public IUser User
+        {
+            get { return user; }
+            set { user = value; }
         }
         private string email;
         public string Email
@@ -80,9 +86,9 @@ namespace imPACt.ViewModels
 
                     //call GetUser function which we define in Firebase helper class    
                     var result = await CrossFirebaseAuth.Current.Instance.SignInWithEmailAndPasswordAsync(Email, Password);
-                    var user = CrossFirebaseAuth.Current.Instance.CurrentUser;
-
-                    await App.Current.MainPage.Navigation.PushAsync(new LandingPage(Surname));
+                    user = CrossFirebaseAuth.Current.Instance.CurrentUser;
+                    await App.Current.MainPage.Navigation.PopToRootAsync();
+                    await App.Current.MainPage.Navigation.PushAsync(new LandingPage());
                 }
                 catch (FirebaseAuthException e)
                 {

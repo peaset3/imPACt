@@ -7,7 +7,7 @@
              x:Class="imPACt.Views.LandingPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding Surname, StringFormat='Welcome {0}!'}" Margin="10"
+            <Label Text="{Binding , StringFormat='Welcome {0}!'}" Margin="10"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="CenterAndExpand" />
             <Button x:Name="editprofile" Text="Edit Profile" Command="{Binding EditProfileCommand}"/>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Plugin.FirebaseAuth;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using imPACt.ViewModels;
@@ -14,10 +14,10 @@ namespace imPACt.Views
     public partial class LandingPage : ContentPage
     {
         LandingPageViewModel welcomePageVM;
-        public LandingPage(string name)
+        public LandingPage()
         {
             InitializeComponent();
-            welcomePageVM = new LandingPageViewModel(name);
+            welcomePageVM = new LandingPageViewModel();
             BindingContext = welcomePageVM;
         }
     }

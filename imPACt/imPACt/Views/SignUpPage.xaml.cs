@@ -16,8 +16,9 @@ namespace imPACt.Views
         SignUpViewModel signUpVM;
         public SignUpPage()
         {
-            InitializeComponent();
             signUpVM = new SignUpViewModel();
+            InitializeComponent();
+            
             //set binding    
             BindingContext = signUpVM;
         }

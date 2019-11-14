@@ -24,9 +24,11 @@ namespace imPACt.ViewModels
                 .OnceAsync<User>()).Select(item =>
                 new User
                 {
+                    Uid = item.Object.Uid,
                     Email = item.Object.Email,
-                    Password = item.Object.Password,
-                    Surname = item.Object.Surname
+                    Surname = item.Object.Surname,
+                    Lastname = item.Object.Lastname,
+                    School = item.Object.School
                 }).ToList();
                 return userlist;
             }
@@ -55,8 +57,8 @@ namespace imPACt.ViewModels
             }
         }
 
-        //Inser a user    
-        public static async Task<bool> AddUser(string email, string password, string surname, string lastname, string school, string degree)
+        //Insert a user    
+        public static async Task<bool> AddUser(string email, string surname, string lastname, string school, string degree, string uid)
         {
             try
             {
@@ -64,8 +66,9 @@ namespace imPACt.ViewModels
 
                 await firebase
                 .Child("Users")
-                .PostAsync(new User() { Email = email, Surname = surname, Lastname = lastname, School = school, Degree = degree, Password = password, });
+                .PostAsync(new User() { Email = email, Surname = surname, Lastname = lastname, School = school, Degree = degree, Uid = uid });
                 return true;
+                
             }
             catch (Exception e)
             {
@@ -75,7 +78,7 @@ namespace imPACt.ViewModels
         }
 
         //Update     
-        public static async Task<bool> UpdateUserPassword(string email, string password)
+        public static async Task<bool> UpdateUserEmail(string uid, string newEmail)
         {
             try
             {
@@ -83,11 +86,11 @@ namespace imPACt.ViewModels
 
                 var toUpdateUser = (await firebase
                 .Child("Users")
-                .OnceAsync<User>()).Where(a => a.Object.Email == email).FirstOrDefault();
+                .OnceAsync<User>()).Where(a => a.Object.Uid == uid).FirstOrDefault();
                 await firebase
                 .Child("Users")
                 .Child(toUpdateUser.Key)
-                .PutAsync(new User() { Email = email, Password = password });
+                .PutAsync(new User() { Email = newEmail });
                 return true;
             }
             catch (Exception e)
