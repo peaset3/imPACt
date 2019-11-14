@@ -5,6 +5,8 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using imPACt.Views;
+using Plugin.FirebaseAuth;
+using Firebase;
 
 namespace imPACt.ViewModels
 {
@@ -121,18 +123,33 @@ namespace imPACt.ViewModels
             {
 
                 //call AddUser function which we define in Firebase helper class    
-                var user = await FirebaseHelper.AddUser(Email, Password, Surname, Lastname, School, Degree);
-                //AddUser return true if data insert successfuly     
-                if (user)
-                {
-                    await App.Current.MainPage.DisplayAlert("SignUp Success", "", "Ok");
-                    //Navigate to Welcome page after successfuly SignUp    
-                    //pass user email to welcom page    
-                    await App.Current.MainPage.Navigation.PushAsync(new LandingPage(Surname));
-                }
-                else
-                    await App.Current.MainPage.DisplayAlert("Error", "SignUp Fail", "OK");
+                try {
+                    var result = await CrossFirebaseAuth.Current.Instance.CreateUserWithEmailAndPasswordAsync(Email, Password);
 
+                    //AddUser return true if data insert successfuly     
+                    if (result != null)
+                    {
+                        await App.Current.MainPage.DisplayAlert("SignUp Success", "", "Ok");
+                        //Navigate to Welcome page after successfuly SignUp    
+                        //pass user email to welcom page    
+                        await App.Current.MainPage.Navigation.PushAsync(new LandingPage(Surname));
+                    }
+                    else
+                        await App.Current.MainPage.DisplayAlert("Error", "SignUp Fail", "OK");
+
+                }
+                catch (FirebaseAuthException e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                    var message = e.Reason ?? e.Message;
+                    await App.Current.MainPage.DisplayAlert("Error", message, "OK");
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+                
+                
             }
         }
     }

@@ -3,20 +3,23 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using imPACt.Views;
 
+using Google.Apis.Auth;
+
 namespace imPACt
 {
     public partial class App : Application
     {
         public App()
         {
+            
             InitializeComponent();
-
+            
             MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            
         }
 
         protected override void OnSleep()

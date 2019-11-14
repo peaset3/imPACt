@@ -6,6 +6,7 @@ using System.Text;
 using Xamarin.Forms;
 
 
+
 namespace imPACt.ViewModels
 {
     class EditProfileViewModel

@@ -51,11 +51,23 @@
               "target": "Package",
               "version": "[4.0.4, )"
             },
+            "Google.Apis": {
+              "target": "Package",
+              "version": "[1.42.0, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.42.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Plugin.FirebaseAuth": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

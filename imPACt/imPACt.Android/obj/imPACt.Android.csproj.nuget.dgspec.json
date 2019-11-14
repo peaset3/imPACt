@@ -42,13 +42,21 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
-            "FirebaseAdmin": {
-              "target": "Package",
-              "version": "[1.9.1, )"
-            },
             "FirebaseDatabase.net": {
               "target": "Package",
               "version": "[4.0.4, )"
+            },
+            "Google.Apis": {
+              "target": "Package",
+              "version": "[1.42.0, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.42.0, )"
+            },
+            "Plugin.FirebaseAuth": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             },
             "Xamarin.Android.Support.Core.Utils": {
               "target": "Package",
@@ -58,9 +66,37 @@
               "target": "Package",
               "version": "[1.2.0, )"
             },
+            "Xamarin.Firebase.Auth": {
+              "target": "Package",
+              "version": "[71.1605.0, )"
+            },
+            "Xamarin.Firebase.Common": {
+              "target": "Package",
+              "version": "[71.1610.0, )"
+            },
+            "Xamarin.Firebase.Config": {
+              "target": "Package",
+              "version": "[71.1610.0, )"
+            },
+            "Xamarin.Firebase.Iid": {
+              "target": "Package",
+              "version": "[71.1710.0, )"
+            },
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.2.0.709249, )"
+            },
+            "Xamarin.GooglePlayServices.Base": {
+              "target": "Package",
+              "version": "[71.1610.0, )"
+            },
+            "Xamarin.GooglePlayServices.Basement": {
+              "target": "Package",
+              "version": "[71.1620.0, )"
+            },
+            "Xamarin.GooglePlayServices.Tasks": {
+              "target": "Package",
+              "version": "[71.1601.0, )"
             }
           }
         }
@@ -113,11 +149,23 @@
               "target": "Package",
               "version": "[4.0.4, )"
             },
+            "Google.Apis": {
+              "target": "Package",
+              "version": "[1.42.0, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.42.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Plugin.FirebaseAuth": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
