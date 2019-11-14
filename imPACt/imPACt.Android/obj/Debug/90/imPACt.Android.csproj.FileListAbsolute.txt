@@ -654,3 +654,7 @@ C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp\_Res
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\googsvcsjson\values\goog_svcs_json.xml
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\flata\158079075395823fbbe504fb886b1f7e2c7c7cbd.stamp
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\flata\158079075395823fbbe504fb886b1f7e2c7c7cbd.flata
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\typemap.jm.x86.s
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\typemap.jm.x86_64.s
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\typemap.mj.x86.s
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\typemap.mj.x86_64.s

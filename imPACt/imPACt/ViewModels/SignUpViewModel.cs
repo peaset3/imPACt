@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using imPACt.Views;
 using Plugin.FirebaseAuth;
 using Firebase;
+using System.Linq;
 
 namespace imPACt.ViewModels
 {
@@ -132,6 +133,7 @@ namespace imPACt.ViewModels
                         await App.Current.MainPage.DisplayAlert("SignUp Success", "", "Ok");
                         //Navigate to Welcome page after successfuly SignUp    
                         //pass user email to welcom page    
+                        await App.Current.MainPage.Navigation.PopToRootAsync();
                         await App.Current.MainPage.Navigation.PushAsync(new LandingPage(Surname));
                     }
                     else
