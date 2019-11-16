@@ -658,3 +658,6 @@ C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\ty
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\typemap.jm.x86_64.s
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\typemap.mj.x86.s
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\android\typemap.mj.x86_64.s
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\res\drawable\today.png
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\res\drawable\settings.png
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\res\drawable\link.png

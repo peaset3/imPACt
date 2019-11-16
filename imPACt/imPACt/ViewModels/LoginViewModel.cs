@@ -87,8 +87,7 @@ namespace imPACt.ViewModels
                     //call GetUser function which we define in Firebase helper class    
                     var result = await CrossFirebaseAuth.Current.Instance.SignInWithEmailAndPasswordAsync(Email, Password);
                     user = CrossFirebaseAuth.Current.Instance.CurrentUser;
-                    await App.Current.MainPage.Navigation.PopToRootAsync();
-                    await App.Current.MainPage.Navigation.PushAsync(new LandingPage());
+                    App.Current.MainPage = new MainTabbedNavigation();
                 }
                 catch (FirebaseAuthException e)
                 {
