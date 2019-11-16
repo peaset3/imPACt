@@ -3,9 +3,12 @@ C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\bin\Debug\netstandard2.0\imPACt
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\bin\Debug\netstandard2.0\ref\imPACt.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\bin\Debug\netstandard2.0\imPACt.pdb
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\ConnectionsPage.xaml.g.cs
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\EditProfilePage.xaml.g.cs
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\MessagesPage.xaml.g.cs
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\SettingsPage.xaml.g.cs
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\SignUpPage.xaml.g.cs
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt.AssemblyInfoInputs.cache
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt.AssemblyInfo.cs
@@ -14,6 +17,3 @@ C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\ref\imPACt.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt.pdb
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt.csprojAssemblyReference.cache
-C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\SettingsPage.xaml.g.cs
-C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\ConnectionsPage.xaml.g.cs
-C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\MessagesPage.xaml.g.cs

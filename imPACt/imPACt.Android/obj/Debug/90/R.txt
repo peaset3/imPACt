@@ -1000,7 +1000,7 @@ int drawable ic_mtrl_chip_checked_black 0x7f070077
 int drawable ic_mtrl_chip_checked_circle 0x7f070078
 int drawable ic_mtrl_chip_close_circle 0x7f070079
 int drawable link 0x7f07007a
-int drawable message 0x7f07007b
+int drawable mail 0x7f07007b
 int drawable mtrl_snackbar_background 0x7f07007c
 int drawable mtrl_tabs_default_indicator 0x7f07007d
 int drawable navigation_empty_icon 0x7f07007e

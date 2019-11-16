@@ -11,9 +11,20 @@ namespace imPACt.Views
     {
         public MainTabbedNavigation()
         {
-            this.Children.Add(new NavigationPage(new MessagesPage()));
-            this.Children.Add(new NavigationPage(new ConnectionsPage()));
-            this.Children.Add(new NavigationPage(new SettingsPage()));
+            var navigationPage = new NavigationPage(new MessagesPage());
+            navigationPage.IconImageSource = "mail.png";
+            navigationPage.Title = "Messages";
+            this.Children.Add(navigationPage);
+
+            navigationPage = new NavigationPage(new ConnectionsPage());
+            navigationPage.IconImageSource = "link.png";
+            navigationPage.Title = "Connections";
+            this.Children.Add(navigationPage);
+
+            navigationPage = new NavigationPage(new SettingsPage());
+            navigationPage.IconImageSource = "settings.png";
+            navigationPage.Title = "Settings";
+            this.Children.Add(navigationPage);
         }
     }
 }

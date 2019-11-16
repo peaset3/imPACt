@@ -4641,7 +4641,7 @@ public final class R {
     public static final int ic_mtrl_chip_checked_circle=0x7f070078;
     public static final int ic_mtrl_chip_close_circle=0x7f070079;
     public static final int link=0x7f07007a;
-    public static final int message=0x7f07007b;
+    public static final int mail=0x7f07007b;
     public static final int mtrl_snackbar_background=0x7f07007c;
     public static final int mtrl_tabs_default_indicator=0x7f07007d;
     public static final int navigation_empty_icon=0x7f07007e;

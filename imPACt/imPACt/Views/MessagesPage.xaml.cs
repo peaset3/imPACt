@@ -17,6 +17,7 @@ namespace imPACt.Views
         public MessagesPage()
         {
             mpvm = new MessagesPageViewModel();
+            NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = mpvm;
             InitializeComponent();
         }

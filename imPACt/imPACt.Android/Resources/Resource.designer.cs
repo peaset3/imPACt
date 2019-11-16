@@ -5860,7 +5860,7 @@ namespace imPACt.Droid
 			public const int link = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int message = 2131165307;
+			public const int mail = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
 			public const int mtrl_snackbar_background = 2131165308;

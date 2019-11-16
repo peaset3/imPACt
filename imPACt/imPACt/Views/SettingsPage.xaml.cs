@@ -16,7 +16,7 @@ namespace imPACt.Views
         SettingsViewModel settingsPageVM;
         public SettingsPage()
         {
-            
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             settingsPageVM = new SettingsViewModel();
             BindingContext = settingsPageVM;

@@ -23,7 +23,6 @@ namespace imPACt.ViewModels
 
         public SettingsViewModel()
         {
-            IconImageSource = "settings.png";
             
         }
         public Command EditProfileCommand
@@ -39,7 +38,7 @@ namespace imPACt.ViewModels
 
         private async void DoEditProfile()
         {
-            await App.Current.MainPage.Navigation.PushAsync(new EditProfilePage());
+            await Navigation.PushAsync(new EditProfilePage());
         }
 
         private async void DoLogout()

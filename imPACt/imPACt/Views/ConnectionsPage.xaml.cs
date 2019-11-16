@@ -15,6 +15,7 @@ namespace imPACt.Views
         ConnectionsPageViewModel cpvm;
         public ConnectionsPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             cpvm = new ConnectionsPageViewModel();
             BindingContext = cpvm;
             InitializeComponent();

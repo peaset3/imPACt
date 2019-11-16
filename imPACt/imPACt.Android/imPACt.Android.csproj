@@ -98,6 +98,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomTabbedPageRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,9 +128,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\link.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\imPACt\imPACt.csproj">
       <Project>{0C37C0AA-CE56-4382-AF15-75BFD4CAD9DD}</Project>
       <Name>imPACt</Name>
@@ -142,7 +140,10 @@
     <AndroidResource Include="Resources\drawable\settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\message.png" />
+    <AndroidResource Include="Resources\drawable\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mail.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
