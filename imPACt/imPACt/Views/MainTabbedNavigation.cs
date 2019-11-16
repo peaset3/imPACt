@@ -11,9 +11,9 @@ namespace imPACt.Views
     {
         public MainTabbedNavigation()
         {
-            this.Children.Add(new MessagesPage());
-            this.Children.Add(new ConnectionsPage());
-            this.Children.Add(new SettingsPage());
+            this.Children.Add(new NavigationPage(new MessagesPage()));
+            this.Children.Add(new NavigationPage(new ConnectionsPage()));
+            this.Children.Add(new NavigationPage(new SettingsPage()));
         }
     }
 }
