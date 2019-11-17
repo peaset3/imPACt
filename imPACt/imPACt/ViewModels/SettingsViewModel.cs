@@ -43,7 +43,7 @@ namespace imPACt.ViewModels
 
         private async void DoLogout()
         {
-            //code logout function
+            App.Current.MainPage = new MainPage();
         }
     }
 }
