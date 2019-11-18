@@ -34,8 +34,10 @@ namespace imPACt.ViewModels
             if (requestingTo != null)
             {
                 if ((requestingTo.AccountType == 1 && requestorInfo.AccountType == 2) || (requestingTo.AccountType == 2 && requestorInfo.AccountType == 1))
+                {
                     await FirebaseHelper.AddUserConnection(requestor.Uid, requestingTo.Uid);
-                await App.Current.MainPage.DisplayAlert("Success", "Accounts successfully linked.", "OK");
+                    await App.Current.MainPage.DisplayAlert("Success", "Accounts successfully linked.", "OK");
+                }
                 else
                 {
                     if (requestorInfo.AccountType == 1)
