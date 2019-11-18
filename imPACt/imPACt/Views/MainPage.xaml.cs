@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using imPACt.ViewModels;
+using Plugin.FirebaseAuth;
 
 namespace imPACt
 {

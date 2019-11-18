@@ -12,6 +12,8 @@ namespace imPACt.Models
         public string Surname { get; set; }
         public string Lastname { get; set; }
         public string Uid { get; set; }
+        public byte AccountType { get; set; }
+
 
     }
 }

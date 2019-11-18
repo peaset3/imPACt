@@ -15,7 +15,7 @@ namespace imPACt.ViewModels
         {
             try
             {
-                Email = CrossFirebaseAuth.Current.Instance.CurrentUser.Email;
+                Uid = CrossFirebaseAuth.Current.Instance.CurrentUser.Uid;
             }
             catch(FirebaseAuthException e)
             {
@@ -27,12 +27,12 @@ namespace imPACt.ViewModels
             }
            
         }
-        private string email;
+        private string uid;
 
-        public string Email
+        public string Uid
         {
-            get { return email; }
-            set { email = value; }
+            get { return uid; }
+            set { uid = value; }
         }
         private string password;
         public string Password
@@ -102,7 +102,8 @@ namespace imPACt.ViewModels
         {
             try
             {
-                var isdelete = await FirebaseHelper.DeleteUser(Email);
+                
+                var isdelete = await FirebaseHelper.DeleteUser(Uid);
                 if (isdelete)
                     await App.Current.MainPage.Navigation.PopAsync();
                 else

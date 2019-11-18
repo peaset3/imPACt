@@ -14,6 +14,39 @@ namespace imPACt.ViewModels
 
     public class SignUpViewModel : INotifyPropertyChanged
     {
+        private IList<String> accountTypes;
+        public IList<String> AccountTypes
+        {
+            get
+            {
+                if (accountTypes == null)
+                {
+                    accountTypes = new List<String>();
+                    accountTypes.Add("Mentee");
+                    accountTypes.Add("Mentor");
+                }
+                return accountTypes;
+            }
+        }
+        private string accountTypeString;
+        public string AccountTypeString
+        {
+            get { return accountTypeString; }
+            set { accountTypeString = value; }
+        }
+        public byte AccountType
+        {
+            get
+            {
+                if (accountTypeString == "Mentee")
+                    return 1;
+                else if (accountTypeString == "Mentor")
+                    return 2;
+                else
+                    return 0;
+            }
+                   
+        }
         private string email;
         public string Email
         {
@@ -116,7 +149,7 @@ namespace imPACt.ViewModels
             //null or empty field validation, check weather email and password is null or empty    
 
             if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(Surname)
-                || string.IsNullOrEmpty(Lastname) || string.IsNullOrEmpty(School) || string.IsNullOrEmpty(Degree) )
+                || string.IsNullOrEmpty(Lastname) || string.IsNullOrEmpty(School) || string.IsNullOrEmpty(Degree))
                 await App.Current.MainPage.DisplayAlert("Empty Values", "Please enter Email and Password", "OK");
             else if ((Email.Substring(Email.Length - 4)) != ".edu")
                 await App.Current.MainPage.DisplayAlert("Invalid Email", "imPACt requires that you use your school's .edu email to register.", "OK");
@@ -129,7 +162,7 @@ namespace imPACt.ViewModels
                     var result = await CrossFirebaseAuth.Current.Instance.CreateUserWithEmailAndPasswordAsync(Email, Password);
 
                     //create new User entry in Database
-                    var table = await FirebaseHelper.AddUser(Email, Surname, Lastname, School, Degree, result.User.Uid);
+                    var table = await FirebaseHelper.AddUser(Email, Surname, Lastname, School, Degree, result.User.Uid, AccountType);
 
                     //AddUser return true if data insert successfuly     
                     if (result != null && table)

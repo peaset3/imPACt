@@ -8,6 +8,9 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
             <Image Source="impact.png" HeightRequest="100" VerticalOptions="EndAndExpand" />
+            <Picker Title="Account Type" ItemsSource="{Binding AccountTypes}" SelectedItem="{Binding AccountTypeString, Mode=TwoWay}" >
+                
+            </Picker>
             <Entry x:Name="Emailentery" Placeholder="School Email" Text="{Binding Email}" Keyboard="Email" />
             <Entry x:Name="passwordentery" Placeholder="Password" Text="{Binding Password}" IsPassword="True" />
             <Entry x:Name="cfmpasswordentery" Placeholder="Re-Enter Password" Text="{Binding ConfirmPassword}" IsPassword="True" />

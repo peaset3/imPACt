@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using imPACt.Views;
 using Plugin.FirebaseAuth;
 
+enum AccountType { Mentee = 0, Mentor = 1 };
 namespace imPACt.ViewModels
 {
     public class LoginViewModel : INotifyPropertyChanged
