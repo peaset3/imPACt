@@ -16,10 +16,16 @@ namespace imPACt.ViewModels
     class ConnectionsPageViewModel
     {
         private string email;
-        public string Email
+        public string RequestEmail
         {
             get { return email; }
             set { email = value; }
+        }
+        private string query;
+        public string Query
+        {
+            get { return query; }
+            set { query = value; }
         }
 
         public Command AddConnectionCommand
@@ -29,7 +35,7 @@ namespace imPACt.ViewModels
         private async void AddConnection()
         {
             IUser requestor = CrossFirebaseAuth.Current.Instance.CurrentUser;
-            var requestingTo = await FirebaseHelper.GetUserByEmail(Email);
+            var requestingTo = await FirebaseHelper.GetUserByEmail(RequestEmail);
             var requestorInfo = await FirebaseHelper.GetUserByUid(requestor.Uid);
             if (requestingTo != null)
             {
@@ -50,6 +56,29 @@ namespace imPACt.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", "User not found. Please try again.", "OK");
         }
 
+        public Command GotoProfileCommand
+        {
+            get { return new Command(GotoProfile); }
+        }
+        private async void GotoProfile()
+        {
+            var user = await FirebaseHelper.GetUserByEmail(Query);
+            string uid;
+            if (user != null)
+            {
+                uid = user.Uid;
+                try
+                {
+                    await App.Current.MainPage.Navigation.PushAsync(new ProfilePage(user));
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+            else
+                await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
+        }
     }
 
     

@@ -9,10 +9,12 @@
              IconImageSource="link.png">
     <ContentPage.Content>
         <StackLayout>
+            <Entry x:Name="viewprofile" Placeholder="Search for someone" Text="{Binding Query}" />
+            <Button x:Name="requestprofilebtn" Text="Search" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding GotoProfileCommand}" />
             <Label Text="Connections page goes here."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Entry x:Name="requestconn" Placeholder="Request connection by email" Text="{Binding Email}" />
+            <Entry x:Name="requestconn" Placeholder="Request connection by email" Text="{Binding RequestEmail}" />
             <Button x:Name="requestbtn" Text="Add Connection" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding AddConnectionCommand}" />
         </StackLayout>
     </ContentPage.Content>

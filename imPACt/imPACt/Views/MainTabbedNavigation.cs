@@ -9,22 +9,25 @@ namespace imPACt.Views
 {
     public class MainTabbedNavigation : TabbedPage
     {
+        public NavigationPage MessageTab { set; get; }
+        public NavigationPage SettingsTab { set; get; }
+        public NavigationPage ConnectionsTab { set; get; }
         public MainTabbedNavigation()
         {
-            var navigationPage = new NavigationPage(new MessagesPage());
-            navigationPage.IconImageSource = "mail.png";
-            navigationPage.Title = "Messages";
-            this.Children.Add(navigationPage);
+            MessageTab = new NavigationPage(new MessagesPage());
+            MessageTab.IconImageSource = "mail.png";
+            MessageTab.Title = "Messages";
+            this.Children.Add(MessageTab);
 
-            navigationPage = new NavigationPage(new ConnectionsPage());
-            navigationPage.IconImageSource = "link.png";
-            navigationPage.Title = "Connections";
-            this.Children.Add(navigationPage);
+            ConnectionsTab = new NavigationPage(new ConnectionsPage());
+            ConnectionsTab.IconImageSource = "link.png";
+            ConnectionsTab.Title = "Connections";
+            this.Children.Add(ConnectionsTab);
 
-            navigationPage = new NavigationPage(new SettingsPage());
-            navigationPage.IconImageSource = "settings.png";
-            navigationPage.Title = "Settings";
-            this.Children.Add(navigationPage);
+            SettingsTab = new NavigationPage(new SettingsPage());
+            SettingsTab.IconImageSource = "settings.png";
+            SettingsTab.Title = "Settings";
+            this.Children.Add(SettingsTab);
         }
     }
 }
