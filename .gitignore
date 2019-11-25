@@ -338,3 +338,8 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/imPACt/imPACt/ViewModels
+/imPACt/imPACt/Views/Profile
+/imPACt/imPACt.Android/Assets
+/imPACt/imPACt.Android/Resources/drawable
+/imPACt/imPACt.iOS/Resources
