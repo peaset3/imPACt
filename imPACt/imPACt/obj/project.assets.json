@@ -2005,25 +2005,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\quent\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Bimst\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\quent\\Source\\Repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
+      "projectUniqueName": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
       "projectName": "imPACt",
-      "projectPath": "C:\\Users\\quent\\Source\\Repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
-      "packagesPath": "C:\\Users\\quent\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\quent\\Source\\Repos\\peaset3\\imPACt\\imPACt\\imPACt\\obj\\",
+      "projectPath": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
+      "packagesPath": "C:\\Users\\Bimst\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\quent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bimst\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

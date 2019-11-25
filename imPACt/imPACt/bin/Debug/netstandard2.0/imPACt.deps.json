@@ -16,7 +16,8 @@
           "NETStandard.Library": "2.0.3",
           "Plugin.FirebaseAuth": "2.0.0",
           "Xamarin.Essentials": "1.2.0",
-          "Xamarin.Forms": "4.2.0.709249"
+          "Xamarin.Forms": "4.2.0.709249",
+          "Mono.Android": "0.0.0.0"
         },
         "runtime": {
           "imPACt.dll": {}
@@ -728,6 +729,14 @@
             "fileVersion": "4.2.0.75"
           }
         }
+      },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
       }
     }
   },
@@ -925,6 +934,11 @@
       "sha512": "sha512-3DWqPSn9kSKJW5mwjmICV/+4IpPQrequEN1VXUhsF0i9KKnfj49jFk9VbJnT9o2aesJAk00NED67XPbSmbxKjw==",
       "path": "xamarin.forms/4.2.0.709249",
       "hashPath": "xamarin.forms.4.2.0.709249.nupkg.sha512"
+    },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

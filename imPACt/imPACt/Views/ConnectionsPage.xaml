@@ -11,6 +11,8 @@
         <StackLayout>
             <Entry x:Name="viewprofile" Placeholder="Search for someone" Text="{Binding Query}" />
             <Button x:Name="requestprofilebtn" Text="Search" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding GotoProfileCommand}" />
+            <Button x:Name="suggestconnectionsbtn" Text="Browse Connections" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding PushSuggestions}" />
+            
             <ListView x:Name="ConnectionView"
             ItemsSource="{Binding PotentialConnections}">
                 <ListView.ItemTemplate>
