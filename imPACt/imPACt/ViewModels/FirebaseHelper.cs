@@ -212,6 +212,31 @@ namespace imPACt.ViewModels
             }
         }
 
+        //Add Message to Conversation
+        public static async Task<bool> AddMessage(string message, Connection connection, string name)
+        {
+            try
+            {
+                //adds messsage and signature
+                connection.Conversation.Add(message+" -"+name);
+
+                //updates conversation itself
+                var toUpdateConvo = (await firebase
+                .Child("Connections")
+                .OnceAsync<Connection>()).Where(a => a.Object.MenteeUid == connection.MenteeUid && a.Object.MentorUid == connection.MentorUid).FirstOrDefault();
+                await firebase
+                .Child("Connections")
+                .Child(toUpdateConvo.Key)
+                .PutAsync(obj: new Connection() { Conversation = connection.Conversation });
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Error:{e}");
+                return false;
+            }
+        }
+
         //Insert connection
         public static async Task<bool> AddUserConnection(string menteeuid, string mentorUid)
         {
@@ -220,7 +245,7 @@ namespace imPACt.ViewModels
             {
                 var post = await firebase
                     .Child("Connections")
-                    .PostAsync(new Connection() { MentorUid = mentorUid, MenteeUid = menteeuid });
+                    .PostAsync(new Connection() { MentorUid = mentorUid, MenteeUid = menteeuid, Conversation= new List<string>() });
 
                 var toUpdateUser = (await firebase
                     .Child("Users")

@@ -8,5 +8,6 @@ namespace imPACt.Models
     {
         public string MenteeUid { get; set; }
         public string MentorUid { get; set; }
+        public List<string> Conversation { get; set; }
     }
 }

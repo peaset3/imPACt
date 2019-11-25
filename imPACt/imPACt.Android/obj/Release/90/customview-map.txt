@@ -31,12 +31,14 @@ item;obj\Release\90\res\values\styles.xml
 LinearLayout;C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt.Android\obj\Release\90\lp\39\jl\res\layout\bottomtablayout.xml
 paths;C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt.Android\obj\Release\90\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt.Android\obj\Release\90\lp\39\jl\res\values\styles.xml
+resources;C:\Users\quent\Source\Repos\peaset3\imPACt\imPACt\imPACt.Android\obj\Release\90\googsvcsjson\values\goog_svcs_json.xml
 resources;obj\Release\90\res\values\colors.xml
 resources;obj\Release\90\res\values\styles.xml
 set;C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt.Android\obj\Release\90\lp\39\jl\res\anim\enterfromleft.xml
 set;C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt.Android\obj\Release\90\lp\39\jl\res\anim\enterfromright.xml
 set;C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt.Android\obj\Release\90\lp\39\jl\res\anim\exittoleft.xml
 set;C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt.Android\obj\Release\90\lp\39\jl\res\anim\exittoright.xml
+string;C:\Users\quent\Source\Repos\peaset3\imPACt\imPACt\imPACt.Android\obj\Release\90\googsvcsjson\values\goog_svcs_json.xml
 style;C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt.Android\obj\Release\90\lp\39\jl\res\values\styles.xml
 style;obj\Release\90\res\values\styles.xml
 translate;C:\Users\bmmar\Source\Repos\imPACt\imPACt\imPACt.Android\obj\Release\90\lp\39\jl\res\anim\enterfromleft.xml

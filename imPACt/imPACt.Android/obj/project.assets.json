@@ -3451,24 +3451,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bimst\\.nuget\\packages\\": {},
+    "C:\\Users\\quent\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj",
+      "projectUniqueName": "C:\\Users\\quent\\Source\\Repos\\peaset3\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj",
       "projectName": "imPACt.Android",
-      "projectPath": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj",
-      "packagesPath": "C:\\Users\\Bimst\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt.Android\\obj\\",
+      "projectPath": "C:\\Users\\quent\\Source\\Repos\\peaset3\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj",
+      "packagesPath": "C:\\Users\\quent\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\quent\\Source\\Repos\\peaset3\\imPACt\\imPACt\\imPACt.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Bimst\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\quent\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -3482,8 +3482,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj": {
-              "projectPath": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj"
+            "C:\\Users\\quent\\Source\\Repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj": {
+              "projectPath": "C:\\Users\\quent\\Source\\Repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj"
             }
           }
         }
