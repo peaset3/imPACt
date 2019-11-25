@@ -14,9 +14,11 @@ namespace imPACt.Views
         public NavigationPage ConnectionsTab { set; get; }
         public MainTabbedNavigation()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             MessageTab = new NavigationPage(new MessagesPage());
             MessageTab.IconImageSource = "mail.png";
             MessageTab.Title = "Messages";
+            
             this.Children.Add(MessageTab);
 
             ConnectionsTab = new NavigationPage(new ConnectionsPage());
