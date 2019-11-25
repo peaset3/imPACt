@@ -8,8 +8,8 @@ using imPACt.Views;
 using Plugin.FirebaseAuth;
 using imPACt.Models;
 using imPACt.ViewModels;
-using Firebase.Database;
-using System.Linq;
+using System.Threading.Tasks;
+
 
 namespace imPACt.ViewModels
 {
@@ -29,20 +29,54 @@ namespace imPACt.ViewModels
             set { query = value; }
         }
 
+        private IUser user;
+        public string Uid
+        {
+            get { return user.Uid; }
+        }
+
+        private List<User> connections;
+        public List<User> Connections
+        {
+            get
+            {
+                if (connections == null)
+                {
+                    connections = Task.Run(() => this.GetConnections()).Result;
+                }
+                return connections;
+            }
+                
+                
+            set { connections = value; }
+        }
+        public ConnectionsPageViewModel()
+        {
+            user = CrossFirebaseAuth.Current.Instance.CurrentUser;
+            
+        }
+
+
+
         public Command AddConnectionCommand
         {
             get { return new Command(AddConnection); }
         }
         private async void AddConnection()
         {
-            IUser requestor = CrossFirebaseAuth.Current.Instance.CurrentUser;
+
             var requestingTo = await FirebaseHelper.GetUserByEmail(RequestEmail);
-            var requestorInfo = await FirebaseHelper.GetUserByUid(requestor.Uid);
+            var requestorInfo = await FirebaseHelper.GetUserByUid(this.Uid);
             if (requestingTo != null)
             {
-                if ((requestingTo.AccountType == 1 && requestorInfo.AccountType == 2) || (requestingTo.AccountType == 2 && requestorInfo.AccountType == 1))
+                if ((requestingTo.AccountType == 2 && requestorInfo.AccountType == 1))
                 {
-                    await FirebaseHelper.AddUserConnection(requestor.Uid, requestingTo.Uid);
+                    await FirebaseHelper.AddUserConnection(this.Uid, requestingTo.Uid);
+                    await App.Current.MainPage.DisplayAlert("Success", "Accounts successfully linked.", "OK");
+                }
+                else if (requestingTo.AccountType == 1 && requestorInfo.AccountType == 2)
+                {
+                    await FirebaseHelper.AddUserConnection(requestingTo.Uid, this.Uid);
                     await App.Current.MainPage.DisplayAlert("Success", "Accounts successfully linked.", "OK");
                 }
                 else
@@ -64,10 +98,10 @@ namespace imPACt.ViewModels
         private async void GotoProfile()
         {
             var user = await FirebaseHelper.GetUserByEmail(Query);
-            string uid;
+            
             if (user != null)
             {
-                uid = user.Uid;
+                
                 try
                 {
                     await App.Current.MainPage.Navigation.PushAsync(new ProfilePage(user));
@@ -80,5 +114,14 @@ namespace imPACt.ViewModels
             else
                 await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
         }
+
+        public async Task<List<User>> GetConnections()
+        {
+            var temp = await FirebaseHelper.GetAllConnections(this.Uid);
+            return temp;
+        }
     }
+
+
+
 }
