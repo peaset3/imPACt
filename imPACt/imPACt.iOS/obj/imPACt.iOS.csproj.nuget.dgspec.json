@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt.iOS\\imPACt.iOS.csproj": {}
+    "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt.iOS\\imPACt.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt.iOS\\imPACt.iOS.csproj": {
+    "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt.iOS\\imPACt.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt.iOS\\imPACt.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt.iOS\\imPACt.iOS.csproj",
         "projectName": "imPACt.iOS",
-        "projectPath": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt.iOS\\imPACt.iOS.csproj",
-        "packagesPath": "C:\\Users\\bmmar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt.iOS\\obj\\",
+        "projectPath": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt.iOS\\imPACt.iOS.csproj",
+        "packagesPath": "C:\\Users\\Bimst\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\bmmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bimst\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\imPACt.csproj": {
-                "projectPath": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\imPACt.csproj"
+              "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj": {
+                "projectPath": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj"
               }
             }
           }
@@ -77,21 +77,20 @@
         }
       }
     },
-    "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\imPACt.csproj": {
+    "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
+        "projectUniqueName": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
         "projectName": "imPACt",
-        "projectPath": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
-        "packagesPath": "C:\\Users\\bmmar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\obj\\",
+        "projectPath": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
+        "packagesPath": "C:\\Users\\Bimst\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bimst\\source\\repos\\peaset3\\imPACt\\imPACt\\imPACt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\bmmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bimst\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

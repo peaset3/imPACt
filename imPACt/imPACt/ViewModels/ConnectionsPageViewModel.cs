@@ -8,7 +8,8 @@ using imPACt.Views;
 using Plugin.FirebaseAuth;
 using imPACt.Models;
 using imPACt.ViewModels;
-
+using Firebase.Database;
+using System.Linq;
 
 namespace imPACt.ViewModels
 {
@@ -80,6 +81,4 @@ namespace imPACt.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
         }
     }
-
-    
 }
