@@ -41,6 +41,56 @@ namespace imPACt.ViewModels
             }
         }
 
+        public static async Task<List<User>> GetAllConnections(string uid) 
+        {
+
+            var users = await firebase
+                .Child("Users")
+                .OnceAsync<User>();
+            var user = users.Where(a => a.Object.Uid == uid).FirstOrDefault(); 
+
+            var keys = (await firebase
+                .Child("Users")
+                .Child(user.Key)
+                .Child("Active Connections")
+                .OnceAsync<Key>()).Select(item =>
+                new Key
+                {
+                    Value = item.Object.Value
+                }).ToList();
+
+            var connections = new List<Connection>();
+
+            foreach (Key k in keys)
+            {
+                connections.Add(await firebase
+                    .Child("Connections")
+                    .Child(k.Value)
+                    .OnceSingleAsync<Connection>());
+            }
+
+            List<User> connected_users = new List<User>();
+
+            if (user.Object.AccountType == 1)
+            {
+                foreach (Connection c in connections)
+                {
+                    User u = await FirebaseHelper.GetUserByUid(c.MentorUid);
+                    connected_users.Add(u);
+                }
+            }
+            else
+            {
+                foreach (Connection c in connections)
+                {
+                    User u = await FirebaseHelper.GetUserByUid(c.MenteeUid);
+                    connected_users.Add(u);
+                }
+            }
+
+            return connected_users;
+        }
+
         //Read     
         public static async Task<User> GetUserByEmail(string email)
         {
@@ -163,18 +213,18 @@ namespace imPACt.ViewModels
         }
 
         //Insert connection
-        public static async Task<bool> AddUserConnection(string uid, string connectionUid)
+        public static async Task<bool> AddUserConnection(string menteeuid, string mentorUid)
         {
             
             try
             {
                 var post = await firebase
                     .Child("Connections")
-                    .PostAsync(new Connection() { MentorUid = connectionUid, MenteeUid = uid });
+                    .PostAsync(new Connection() { MentorUid = mentorUid, MenteeUid = menteeuid });
 
                 var toUpdateUser = (await firebase
                     .Child("Users")
-                    .OnceAsync<User>()).Where(a => a.Object.Uid == uid).FirstOrDefault();
+                    .OnceAsync<User>()).Where(a => a.Object.Uid == menteeuid).FirstOrDefault();
 
                 await firebase
                     .Child("Users")
@@ -184,7 +234,7 @@ namespace imPACt.ViewModels
 
                 toUpdateUser = (await firebase
                     .Child("Users")
-                    .OnceAsync<User>()).Where(a => a.Object.Uid == connectionUid).FirstOrDefault();
+                    .OnceAsync<User>()).Where(a => a.Object.Uid == mentorUid).FirstOrDefault();
 
                 await firebase
                     .Child("Users")

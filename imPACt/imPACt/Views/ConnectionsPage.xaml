@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
@@ -11,11 +11,18 @@
         <StackLayout>
             <Entry x:Name="viewprofile" Placeholder="Search for someone" Text="{Binding Query}" />
             <Button x:Name="requestprofilebtn" Text="Search" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding GotoProfileCommand}" />
-            <Label Text="Connections page goes here."
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding Connections}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Button Text="{Binding Fullname}" FontSize="Medium" BackgroundColor="#3897F0" TextColor="White" WidthRequest="400" HorizontalOptions="Center" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Entry x:Name="requestconn" Placeholder="Request connection by email" Text="{Binding RequestEmail}" />
             <Button x:Name="requestbtn" Text="Add Connection" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding AddConnectionCommand}" />
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
