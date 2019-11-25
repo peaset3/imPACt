@@ -7,11 +7,13 @@
              x:Class="imPACt.Views.SignUpPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
-            <Image Source="impact.png" HeightRequest="100" VerticalOptions="EndAndExpand" />
+            <Image Source="impact_icon.png" HeightRequest="150" VerticalOptions="EndAndExpand" />
+            <StackLayout Orientation="Horizontal">
             <Picker Title="Account Type" ItemsSource="{Binding AccountTypes}" SelectedItem="{Binding AccountTypeString, Mode=TwoWay}" >
                 
             </Picker>
-            <Entry x:Name="Emailentery" Placeholder="School Email" Text="{Binding Email}" Keyboard="Email" />
+            <Entry x:Name="Emailentery" Placeholder="School Email" HorizontalOptions="FillAndExpand" Text="{Binding Email}" Keyboard="Email" />
+            </StackLayout>
             <Entry x:Name="passwordentery" Placeholder="Password" Text="{Binding Password}" IsPassword="True" />
             <Entry x:Name="cfmpasswordentery" Placeholder="Re-Enter Password" Text="{Binding ConfirmPassword}" IsPassword="True" />
             <StackLayout Orientation="Horizontal">
@@ -20,10 +22,7 @@
             </StackLayout>
             <Entry x:Name="School" Placeholder="School Name" Text="{Binding School}" />
             <Entry x:Name="Degree" Placeholder="Area of Study" Text="{Binding Degree}" />
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Save Password" />
-                <Switch OnColor="#485992" IsToggled="False" />
-            </StackLayout>
+            
             <Button x:Name="signup" Text="SignUp" BackgroundColor="#3897F0" TextColor="White" Command="{Binding SignUpCommand}" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" />
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
