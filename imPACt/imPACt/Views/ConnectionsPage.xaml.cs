@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using Firebase.Database;
 using Plugin.FirebaseAuth;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace imPACt.Views
 {
@@ -22,15 +23,10 @@ namespace imPACt.Views
             
             NavigationPage.SetHasNavigationBar(this, false);
             cpvm = new ConnectionsPageViewModel();
-            BindingContext = cpvm;
-            
-            InitializeComponent();
+            BindingContext = cpvm;            
+            InitializeComponent();         
 
         }
 
-        private async void PushSuggestions()
-        {
-            await Navigation.PushAsync(new ListViewPage1());
-        }
     }
 }

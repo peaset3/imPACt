@@ -22,7 +22,6 @@ C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\bin\Debug\netstandard2.
 C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\bin\Debug\netstandard2.0\imPACt.dll
 C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\bin\Debug\netstandard2.0\ref\imPACt.dll
 C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\bin\Debug\netstandard2.0\imPACt.pdb
-C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt.csprojAssemblyReference.cache
 C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\ConnectionsPage.xaml.g.cs
 C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\EditProfilePage.xaml.g.cs
@@ -65,3 +64,4 @@ C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\bin\Debug\netstandard2.
 C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\bin\Debug\netstandard2.0\Mono.Android.xml
 C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\ListViewPage1.xaml.g.cs
 C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt.csproj.CopyComplete
+C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt.csprojAssemblyReference.cache
