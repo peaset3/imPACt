@@ -12,44 +12,66 @@
     <ContentPage.Content>
         <StackLayout x:Name="sl1">
             
-            <Entry x:Name="viewprofile" Placeholder="Search for someone" Text="{Binding Query}" />
-            <Button x:Name="requestprofilebtn" Text="Search" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding GotoProfileCommand}" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+
+                </Grid.ColumnDefinitions>
+                <Entry x:Name="viewprofile" Margin="20,15,0,15" Grid.Column="0" Placeholder="Search for someone" Text="{Binding Query}" />
+                <Button x:Name="requestprofilebtn" Margin="0,15,20,15" Grid.Column="1" Text="Search" BackgroundColor="#3897F0" TextColor="White" HorizontalOptions="Center" Command="{Binding GotoProfileCommand}" />
+
+            </Grid>
 
 
+            <Label Text="Active Connections" HorizontalOptions="Center" FontSize="20"/>
             <ListView x:Name="connectionslist" ItemsSource="{Binding Connections}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Fullname}"/>
+                        <ViewCell>
+
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Margin="20,5,0,5"  Grid.Column="0" Source="{Binding PhotoSource}" HeightRequest="50" WidthRequest="50"/>
+                                <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                <Button Margin="0,0,20,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
+
+                            </Grid>
+
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <!--<Label Text="Current and Pending Connections"></Label>
-            <ListView x:Name="ConnectionView" ItemsSource="{Binding Connections}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Label Text="{Binding Fullname}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
 
-            <Label Text="Suggested Connections"/>
+
+            <Label Text="Suggested Connections" HorizontalOptions="Center" FontSize="20"/>
             <ListView x:Name="SuggestedConnections" ItemsSource="{Binding PotentialConnections}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             
-                                <Grid>
+                                <Grid >
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="2*" />                                       
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="2*"/>
                                         <ColumnDefinition Width="1*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="{Binding PhotoSource}" HeightRequest="50" WidthRequest="50"/>
+                                    <Image Margin="20,5,0,5"  Grid.Column="0" Source="{Binding PhotoSource}" HeightRequest="50" WidthRequest="50"/>
                                     <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                                    <Button Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
+                                    <Button Margin="0,0,20,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
 
                                 </Grid>
                             
