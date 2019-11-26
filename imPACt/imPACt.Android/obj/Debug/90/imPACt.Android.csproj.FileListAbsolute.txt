@@ -1993,3 +1993,4 @@ C:\Users\quent\Source\Repos\peaset3\imPACt\imPACt\imPACt.Android\obj\Debug\90\st
 C:\Users\quent\Source\Repos\peaset3\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\quent\Source\Repos\peaset3\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\quent\Source\Repos\peaset3\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Bimst\source\repos\peaset3\imPACt\imPACt\imPACt.Android\obj\Debug\90\res\drawable\impact_icon.png

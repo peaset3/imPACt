@@ -37,20 +37,8 @@ namespace imPACt.ViewModels
             get { return user.Uid; }
         }
 
-        private byte userAccountType;
-        public byte UserAccountType
-        {
-            get
-            {
-                if (userAccountType == null)
-                {
-                    userAccountType = Task.Run(() => FirebaseHelper.GetUserByUid(Uid)).Result.AccountType;
-                }
-                return userAccountType;
-            }
-        }
-
-        ObservableCollection<User> currentConnections;
+        
+        /*private ObservableCollection<User> currentConnections;
 
         public ObservableCollection<User> CurrentConnections
         {
@@ -73,7 +61,7 @@ namespace imPACt.ViewModels
             }
             return currConn;
         }
-
+        */
         ObservableCollection<User> potentialConnections;
 
         public ObservableCollection<User> PotentialConnections { 
@@ -104,8 +92,6 @@ namespace imPACt.ViewModels
         public ConnectionsPageViewModel()
         {
             user = CrossFirebaseAuth.Current.Instance.CurrentUser;
-
-
         }
 
         public Command AddConnectionCommand
@@ -165,14 +151,14 @@ namespace imPACt.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
         }
 
-        public Command GotoConnectionProfileCommand
-        {
-            get { return new Command<String>( (email) => GotoConnectionProfile(email)); }
+        /*public Command<string> GotoConnectionProfileCommand 
+        { 
+            get { return new Command<string>(GotoConnectionProfile); } 
         }
 
-        private async void GotoConnectionProfile(string email)
+        async void GotoConnectionProfile(string lemail)
         {
-            var user = await FirebaseHelper.GetUserByEmail(email);
+            var user = await FirebaseHelper.GetUserByEmail(lemail);
 
             if (user != null)
             {
@@ -189,7 +175,7 @@ namespace imPACt.ViewModels
             else
                 await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
         }
-
+        */
 
         public async Task<List<User>> GetConnections()
         {

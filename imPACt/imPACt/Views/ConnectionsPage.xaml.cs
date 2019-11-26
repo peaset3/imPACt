@@ -23,39 +23,10 @@ namespace imPACt.Views
             
             NavigationPage.SetHasNavigationBar(this, false);
             cpvm = new ConnectionsPageViewModel();
-            BindingContext = cpvm;
-            
-            InitializeComponent();
-
-            /*int i = 0;
-            string[] mentorNames = new string[cpvm.PotentialConnections.Count];
-            foreach (User mentor in cpvm.PotentialConnections)
-            {
-                mentorNames[i] = mentor.Fullname;
-                i++;
-            }
-            MyButtons.Children.Clear();
-            foreach (var item in cpvm.PotentialConnections)
-            {
-                var btn = new Button()
-                {
-                    Text = item.Fullname,
-                    StyleId = item.Uid
-                    };
-                btn.Clicked += OnDynamicBtnClicked;
-                MyButtons.Children.Add(btn);
-            }*/
-            
+            BindingContext = cpvm;            
+            InitializeComponent();         
 
         }
 
-        private void OnDynamicBtnClicked(object sender, EventArgs e)
-        {
-            var myBtn = sender as Button;
-            var uId = myBtn.StyleId;
-
-            cpvm.Query = uId;
-
-        }
     }
 }

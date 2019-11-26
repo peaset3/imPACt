@@ -12,25 +12,32 @@
             
             <Entry x:Name="viewprofile" Placeholder="Search for someone" Text="{Binding Query}" />
             <Button x:Name="requestprofilebtn" Text="Search" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding GotoProfileCommand}" />
-            
-            
-            <Label Text="Current and Pending Connections"></Label>
-            <ListView x:Name="ConnectionView" ItemsSource="{Binding CurrentConnections}">
+
+
+            <ListView x:Name="connectionslist" ItemsSource="{Binding Connections}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Fullname}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<Label Text="Current and Pending Connections"></Label>
+            <ListView x:Name="ConnectionView" ItemsSource="{Binding Connections}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Label Text="{Binding Fullname}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
-            
-            <Label Text="Suggested Connections"/>
-            <ListView x:Name="SuggestedConnections" ItemsSource="{Binding potentialConnections}">
+            </ListView>-->
+
+            <!--<Label Text="Suggested Connections"/>
+            <ListView x:Name="SuggestedConnections" ItemsSource="{Binding PotentialConnections}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Button Text="{Binding Fullname}"  Command="{Binding GotoConnectionProfile}" CommandParameter="{Binding Email}"/>
+                        <Button Text="{Binding Fullname}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
 
          
             
