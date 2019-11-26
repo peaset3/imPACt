@@ -9,34 +9,23 @@
              IconImageSource="link.png">
     <ContentPage.Content>
         <StackLayout>
-            
             <Entry x:Name="viewprofile" Placeholder="Search for someone" Text="{Binding Query}" />
             <Button x:Name="requestprofilebtn" Text="Search" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding GotoProfileCommand}" />
+            <Button x:Name="suggestconnectionsbtn" Text="Browse Connections" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding PushSuggestions}" />
             
-            
-            <Label Text="Current and Pending Connections"></Label>
-            <ListView x:Name="ConnectionView" ItemsSource="{Binding CurrentConnections}">
+            <ListView x:Name="ConnectionView"
+            ItemsSource="{Binding PotentialConnections}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Label Text="{Binding Fullname}"/>
+                        <TextCell Text="{Binding Surname}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
-            <Label Text="Suggested Connections"/>
-            <ListView x:Name="SuggestedConnections" ItemsSource="{Binding potentialConnections}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Button Text="{Binding Fullname}"  Command="{Binding GotoConnectionProfile}" CommandParameter="{Binding Email}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-         
-            
+            <!--<Label Text="Connections page goes here."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />-->
             <Entry x:Name="requestconn" Placeholder="Request connection by email" Text="{Binding RequestEmail}" />
             <Button x:Name="requestbtn" Text="Add Connection" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding AddConnectionCommand}" />
-        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
