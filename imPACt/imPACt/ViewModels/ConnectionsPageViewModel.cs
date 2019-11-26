@@ -37,6 +37,43 @@ namespace imPACt.ViewModels
             get { return user.Uid; }
         }
 
+        private byte userAccountType;
+        public byte UserAccountType
+        {
+            get
+            {
+                if (userAccountType == null)
+                {
+                    userAccountType = Task.Run(() => FirebaseHelper.GetUserByUid(Uid)).Result.AccountType;
+                }
+                return userAccountType;
+            }
+        }
+
+        ObservableCollection<User> currentConnections;
+
+        public ObservableCollection<User> CurrentConnections
+        {
+            get
+            {
+                if (currentConnections == null)
+                {
+                    currentConnections = Task.Run(() => this.FindCurrentConnections()).Result;
+                }
+                return currentConnections;
+            }
+        }
+
+        private async Task<ObservableCollection<User>> FindCurrentConnections()
+        {
+            ObservableCollection<User> currConn = new ObservableCollection<User>();
+            foreach(User u in FirebaseHelper.GetAllConnections(Uid).Result)
+            {
+                currConn.Add(u);
+            }
+            return currConn;
+        }
+
         ObservableCollection<User> potentialConnections;
 
         public ObservableCollection<User> PotentialConnections { 
@@ -128,6 +165,32 @@ namespace imPACt.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
         }
 
+        public Command GotoConnectionProfileCommand
+        {
+            get { return new Command<String>( (email) => GotoConnectionProfile(email)); }
+        }
+
+        private async void GotoConnectionProfile(string email)
+        {
+            var user = await FirebaseHelper.GetUserByEmail(email);
+
+            if (user != null)
+            {
+
+                try
+                {
+                    await App.Current.MainPage.Navigation.PushAsync(new ProfilePage(user));
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+            else
+                await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
+        }
+
+
         public async Task<List<User>> GetConnections()
         {
             var temp = await FirebaseHelper.GetAllConnections(this.Uid);
@@ -151,7 +214,9 @@ namespace imPACt.ViewModels
                         School = item.Object.School,
                         Degree = item.Object.Degree,
                         AccountType = item.Object.AccountType
-                    }).Where(item => item.School == menteeUser.School && item.Degree == menteeUser.Degree).ToList();
+                    }).Where(item => item.School == menteeUser.School 
+                                  && item.Degree == menteeUser.Degree
+                                  && item.AccountType != 1).ToList();
 
 
             //Check first if there are any local mentors incase the mentee's school does not have mentors of requisite degree
@@ -168,7 +233,8 @@ namespace imPACt.ViewModels
                         School = item.Object.School,
                         Degree = item.Object.Degree,
                         AccountType = item.Object.AccountType
-                    }).Where<User>(item => item.Degree == menteeUser.Degree).ToList();
+                    }).Where<User>(item => item.Degree == menteeUser.Degree
+                                        && item.AccountType != 1).ToList();
                 //If there are no local mentors, fetch ALL mentors with requisite degree
             }
             return new ObservableCollection<User>(localMentorsList);

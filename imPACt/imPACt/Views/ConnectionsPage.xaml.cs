@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using Firebase.Database;
 using Plugin.FirebaseAuth;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace imPACt.Views
 {
@@ -26,11 +27,35 @@ namespace imPACt.Views
             
             InitializeComponent();
 
+            /*int i = 0;
+            string[] mentorNames = new string[cpvm.PotentialConnections.Count];
+            foreach (User mentor in cpvm.PotentialConnections)
+            {
+                mentorNames[i] = mentor.Fullname;
+                i++;
+            }
+            MyButtons.Children.Clear();
+            foreach (var item in cpvm.PotentialConnections)
+            {
+                var btn = new Button()
+                {
+                    Text = item.Fullname,
+                    StyleId = item.Uid
+                    };
+                btn.Clicked += OnDynamicBtnClicked;
+                MyButtons.Children.Add(btn);
+            }*/
+            
+
         }
 
-        private async void PushSuggestions()
+        private void OnDynamicBtnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListViewPage1());
+            var myBtn = sender as Button;
+            var uId = myBtn.StyleId;
+
+            cpvm.Query = uId;
+
         }
     }
 }

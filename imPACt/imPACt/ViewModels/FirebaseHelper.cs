@@ -126,6 +126,23 @@ namespace imPACt.ViewModels
             }
         }
 
+        public static async Task<User> GetUserByFullName(string fullName)
+        {
+            try
+            {
+                var allUsers = await GetAllUser();
+                await firebase
+                .Child("Users")
+                .OnceAsync<User>();
+                return allUsers.Where(a => a.Fullname == fullName).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Error:{e}");
+                return null;
+            }
+        }
+
         //Insert a user    
         public static async Task<bool> AddUser(string email, string surname, string lastname, string school, string degree, string uid, byte type)
         {
