@@ -1994,3 +1994,5 @@ C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp\_Cop
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\res\drawable\impact_icon.png
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt.Android\obj\Debug\90\res\drawable\impact.png

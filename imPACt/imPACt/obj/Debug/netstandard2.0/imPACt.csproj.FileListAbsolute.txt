@@ -66,3 +66,4 @@ C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\bin\Debug\netstandard2.0\imPACt
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\bin\Debug\netstandard2.0\ref\imPACt.dll
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\bin\Debug\netstandard2.0\imPACt.pdb
 C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\bmmar\source\repos\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt.csprojAssemblyReference.cache
