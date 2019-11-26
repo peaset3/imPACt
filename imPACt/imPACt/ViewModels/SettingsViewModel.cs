@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using imPACt.Views;
+using imPACt.Models;
 using Plugin.FirebaseAuth;
 
 
@@ -12,7 +13,6 @@ namespace imPACt.ViewModels
 {
     class SettingsViewModel : TabbedPage
     {
-        
 
 
         private string name;
@@ -23,7 +23,6 @@ namespace imPACt.ViewModels
 
         public SettingsViewModel()
         {
-            
         }
         public Command EditProfileCommand
         {
@@ -38,7 +37,8 @@ namespace imPACt.ViewModels
 
         private async void DoEditProfile()
         {
-            await Navigation.PushAsync(new EditProfilePage());
+            var user = await FirebaseHelper.GetUserByUid(CrossFirebaseAuth.Current.Instance.CurrentUser.Uid);
+            await App.Current.MainPage.Navigation.PushAsync(new ProfilePage(user));
         }
 
         private void DoLogout()
