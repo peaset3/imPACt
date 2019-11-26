@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using imPACt.Views;
 using Plugin.FirebaseAuth;
 using imPACt.Models;
+using Xamarin.Forms.Core;
 using imPACt.ViewModels;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
@@ -32,7 +33,7 @@ namespace imPACt.ViewModels
         }
 
         private IUser user;
-        public string Uid
+        public string CurrentUid
         {
             get { return user.Uid; }
         }
@@ -102,17 +103,17 @@ namespace imPACt.ViewModels
         {
 
             var requestingTo = await FirebaseHelper.GetUserByEmail(RequestEmail);
-            var requestorInfo = await FirebaseHelper.GetUserByUid(this.Uid);
+            var requestorInfo = await FirebaseHelper.GetUserByUid(this.CurrentUid);
             if (requestingTo != null)
             {
                 if ((requestingTo.AccountType == 2 && requestorInfo.AccountType == 1))
                 {
-                    await FirebaseHelper.AddUserConnection(this.Uid, requestingTo.Uid);
+                    await FirebaseHelper.AddUserConnection(this.CurrentUid, requestingTo.Uid);
                     await App.Current.MainPage.DisplayAlert("Success", "Accounts successfully linked.", "OK");
                 }
                 else if (requestingTo.AccountType == 1 && requestorInfo.AccountType == 2)
                 {
-                    await FirebaseHelper.AddUserConnection(requestingTo.Uid, this.Uid);
+                    await FirebaseHelper.AddUserConnection(requestingTo.Uid, this.CurrentUid);
                     await App.Current.MainPage.DisplayAlert("Success", "Accounts successfully linked.", "OK");
                 }
                 else
@@ -151,14 +152,14 @@ namespace imPACt.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
         }
 
-        public Command GotoConnectionProfileCommand
+        public Command GotoConnectionCommand
         {
-            get { return new Command<string>(GotoConnectionProfile); }
+            get { return new Command<string>((x) => GotoConnectionProfile(x)); }
         }
 
-        async void GotoConnectionProfile(string lemail)
+        async void GotoConnectionProfile(string luid)
         {
-            var user = await FirebaseHelper.GetUserByEmail(lemail);
+            var user = await FirebaseHelper.GetUserByUid(luid);
 
             if (user != null)
             {
@@ -179,7 +180,7 @@ namespace imPACt.ViewModels
 
         public async Task<List<User>> GetConnections()
         {
-            var temp = await FirebaseHelper.GetAllConnections(this.Uid);
+            var temp = await FirebaseHelper.GetAllConnections(this.CurrentUid);
             return temp;
         }
         

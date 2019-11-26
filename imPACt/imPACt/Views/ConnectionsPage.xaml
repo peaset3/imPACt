@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:xreference="clr-namespace:Xamarin.Forms.Xaml"
              mc:Ignorable="d"
+             x:Name="connectionspage"
              x:Class="imPACt.Views.ConnectionsPage"
              Title="Connections"
              IconImageSource="link.png">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout x:Name="sl1">
             
             <Entry x:Name="viewprofile" Placeholder="Search for someone" Text="{Binding Query}" />
             <Button x:Name="requestprofilebtn" Text="Search" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding GotoProfileCommand}" />
@@ -36,7 +38,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <Button Text="{Binding Fullname}" Command="{Binding GotoConnectionProfileCommand}" CommandParameter="{Binding Email}"/>
+                                <Button Text="{Binding Fullname}" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
