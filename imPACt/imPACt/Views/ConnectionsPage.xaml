@@ -37,9 +37,22 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Button Text="{Binding Fullname}" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
-                            </StackLayout>
+                            
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding PhotoSource}" HeightRequest="50" WidthRequest="50"/>
+                                    <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                    <Button Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
+
+                                </Grid>
+                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

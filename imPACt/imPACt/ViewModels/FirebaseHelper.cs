@@ -30,7 +30,8 @@ namespace imPACt.ViewModels
                     Lastname = item.Object.Lastname,
                     School = item.Object.School,
                     Degree = item.Object.Degree,
-                    AccountType = item.Object.AccountType
+                    AccountType = item.Object.AccountType,
+                    PhotoUrl = item.Object.PhotoUrl
                 }).ToList();
                 return userlist;
             }
@@ -136,7 +137,8 @@ namespace imPACt.ViewModels
                 await firebase
                 .Child("Users")
                 .PostAsync(new User() { Email = email, Surname = surname, Lastname = lastname,
-                    School = school, Degree = degree, Uid = uid, AccountType = type });
+                    School = school, Degree = degree, Uid = uid, AccountType = type, PhotoUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+                });
                 return true;
                 
             }
@@ -161,6 +163,28 @@ namespace imPACt.ViewModels
                 .Child("Users")
                 .Child(toUpdateUser.Key)
                 .PutAsync(new User() { Email = newEmail });
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Error:{e}");
+                return false;
+            }
+        }
+
+        public static async Task<bool> UpdateUserPhoto(string uid, string url)
+        {
+            try
+            {
+
+
+                var toUpdateUser = (await firebase
+                .Child("Users")
+                .OnceAsync<User>()).Where(a => a.Object.Uid == uid).FirstOrDefault();
+                await firebase
+                .Child("Users")
+                .Child(toUpdateUser.Key)
+                .PutAsync(new User() { PhotoUrl = url });
                 return true;
             }
             catch (Exception e)

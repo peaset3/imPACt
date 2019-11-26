@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using imPACt.Views;
 using Plugin.FirebaseAuth;
 using imPACt.Models;
+using System.Drawing;
 using Xamarin.Forms.Core;
 using imPACt.ViewModels;
 using System.Threading.Tasks;
@@ -101,7 +102,7 @@ namespace imPACt.ViewModels
         }
         private async void AddConnection()
         {
-
+            Bitmap v;
             var requestingTo = await FirebaseHelper.GetUserByEmail(RequestEmail);
             var requestorInfo = await FirebaseHelper.GetUserByUid(this.CurrentUid);
             if (requestingTo != null)
@@ -200,7 +201,8 @@ namespace imPACt.ViewModels
                         Lastname = item.Object.Lastname,
                         School = item.Object.School,
                         Degree = item.Object.Degree,
-                        AccountType = item.Object.AccountType
+                        AccountType = item.Object.AccountType,
+                        PhotoUrl = item.Object.PhotoUrl
                     }).Where(item => item.School == menteeUser.School 
                                   && item.Degree == menteeUser.Degree
                                   && item.AccountType != 1).ToList();
@@ -219,7 +221,8 @@ namespace imPACt.ViewModels
                         Lastname = item.Object.Lastname,
                         School = item.Object.School,
                         Degree = item.Object.Degree,
-                        AccountType = item.Object.AccountType
+                        AccountType = item.Object.AccountType,
+                        PhotoUrl = item.Object.PhotoUrl
                     }).Where<User>(item => item.Degree == menteeUser.Degree
                                         && item.AccountType != 1).ToList();
                 //If there are no local mentors, fetch ALL mentors with requisite degree

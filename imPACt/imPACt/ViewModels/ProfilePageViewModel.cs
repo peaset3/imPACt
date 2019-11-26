@@ -22,6 +22,15 @@ namespace imPACt.ViewModels
             set { user = value; }
         }
 
+        public ImageSource PhotoSource
+        {
+            get
+            {
+                ImageSource i = new Uri(user.PhotoUrl);
+                return i;
+            }
+        }
+
         public ProfilePageViewModel()
         {
         }

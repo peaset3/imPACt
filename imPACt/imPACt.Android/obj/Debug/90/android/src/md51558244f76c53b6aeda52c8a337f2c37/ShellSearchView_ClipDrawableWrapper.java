@@ -2,7 +2,7 @@ package md51558244f76c53b6aeda52c8a337f2c37;
 
 
 public class ShellSearchView_ClipDrawableWrapper
-	extends android.graphics.drawable.DrawableWrapper
+	extends android.support.v7.graphics.drawable.DrawableWrapper
 	implements
 		mono.android.IGCUserPeer
 {

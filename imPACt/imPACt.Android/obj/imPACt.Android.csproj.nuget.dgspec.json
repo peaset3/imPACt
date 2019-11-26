@@ -58,13 +58,21 @@
               "target": "Package",
               "version": "[2.0.0, )"
             },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.7.0-preview3.19551.4, )"
+            },
+            "System.Drawing.Primitives": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
             "Xamarin.Android.Support.Core.Utils": {
               "target": "Package",
-              "version": "[28.0.0.1, )"
+              "version": "[28.0.0.3, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.2.0, )"
+              "version": "[1.3.1, )"
             },
             "Xamarin.Firebase.Auth": {
               "target": "Package",
@@ -84,7 +92,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.2.0.709249, )"
+              "version": "[4.4.0.991210-pre2, )"
             },
             "Xamarin.GooglePlayServices.Base": {
               "target": "Package",
@@ -167,13 +175,21 @@
               "target": "Package",
               "version": "[2.0.0, )"
             },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.7.0-preview3.19551.4, )"
+            },
+            "System.Drawing.Primitives": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.2.0, )"
+              "version": "[1.3.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.2.0.709249, )"
+              "version": "[4.4.0.991210-pre2, )"
             }
           },
           "imports": [
