@@ -30,14 +30,18 @@
                 </ListView.ItemTemplate>
             </ListView>-->
 
-            <!--<Label Text="Suggested Connections"/>
+            <Label Text="Suggested Connections"/>
             <ListView x:Name="SuggestedConnections" ItemsSource="{Binding PotentialConnections}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Button Text="{Binding Fullname}"/>
+                        <ViewCell>
+                            <StackLayout>
+                                <Button Text="{Binding Fullname}" Command="{Binding GotoConnectionProfileCommand}" CommandParameter="{Binding Email}"/>
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>-->
+            </ListView>
 
          
             

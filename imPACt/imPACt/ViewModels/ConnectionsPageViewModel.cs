@@ -151,9 +151,9 @@ namespace imPACt.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
         }
 
-        /*public Command<string> GotoConnectionProfileCommand 
-        { 
-            get { return new Command<string>(GotoConnectionProfile); } 
+        public Command GotoConnectionProfileCommand
+        {
+            get { return new Command<string>(GotoConnectionProfile); }
         }
 
         async void GotoConnectionProfile(string lemail)
@@ -175,7 +175,7 @@ namespace imPACt.ViewModels
             else
                 await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
         }
-        */
+
 
         public async Task<List<User>> GetConnections()
         {

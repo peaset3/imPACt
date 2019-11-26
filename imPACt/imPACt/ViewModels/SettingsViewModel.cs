@@ -41,7 +41,7 @@ namespace imPACt.ViewModels
             await Navigation.PushAsync(new EditProfilePage());
         }
 
-        private async void DoLogout()
+        private void DoLogout()
         {
             App.Current.MainPage = new MainPage();
         }
