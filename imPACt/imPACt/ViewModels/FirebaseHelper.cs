@@ -48,17 +48,24 @@ namespace imPACt.ViewModels
             var users = await firebase
                 .Child("Users")
                 .OnceAsync<User>();
-            var user = users.Where(a => a.Object.Uid == uid).FirstOrDefault(); 
+            var user = users.Where(a => a.Object.Uid == uid).FirstOrDefault();
 
-            var keys = (await firebase
+            var key_check = (await firebase
                 .Child("Users")
                 .Child(user.Key)
                 .Child("Active Connections")
-                .OnceAsync<Key>()).Select(item =>
+                .OnceAsync<Key>());
+            if (key_check.Count == 0)
+                return new List<User>();
+            var keys = key_check
+            .Select(item =>
                 new Key
                 {
                     Value = item.Object.Value
                 }).ToList();
+
+            if (keys.Count == 0)
+                return new List<User>();
 
             var connections = new List<Connection>();
 
@@ -137,7 +144,8 @@ namespace imPACt.ViewModels
                 await firebase
                 .Child("Users")
                 .PostAsync(new User() { Email = email, Surname = surname, Lastname = lastname,
-                    School = school, Degree = degree, Uid = uid, AccountType = type, PhotoUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+                    School = school, Degree = degree, Uid = uid,
+                    AccountType = type, PhotoUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
                 });
                 return true;
                 

@@ -83,7 +83,11 @@ namespace imPACt.ViewModels
             {
                 if (connections == null)
                 {
-                    connections = Task.Run(() => this.GetConnections()).Result;
+                    var conn = Task.Run(() => this.GetConnections()).Result;
+                    if (conn == null)
+                        connections = new List<User>();
+                    else
+                        connections = conn;
                 }
                 return connections;
             }
@@ -95,6 +99,7 @@ namespace imPACt.ViewModels
         {
             user = CrossFirebaseAuth.Current.Instance.CurrentUser;
         }
+
 
         public Command AddConnectionCommand
         {

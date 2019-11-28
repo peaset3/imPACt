@@ -3,27 +3,41 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using imPACt.Views;
 using imPACt.Models;
+using imPACt.ViewModels;
 using Plugin.FirebaseAuth;
-
+using System.Linq;
+using Firebase.Database.Query;
 
 namespace imPACt.ViewModels
 {
     class SettingsViewModel : TabbedPage
     {
 
-
-        private string name;
-        public string Name
+        private User user;
+        public User CurrentUser
         {
-            get { return name; }
+            get
+            {
+                if (user == null)
+                    user = Task.Run(() => FirebaseHelper.GetUserByUid(CrossFirebaseAuth.Current.Instance.CurrentUser.Uid)).Result;
+                return user;
+            }
         }
 
-        public SettingsViewModel()
+
+        public ImageSource PhotoSource
         {
+            get
+            {
+                ImageSource i = new Uri(CurrentUser.PhotoUrl);
+                return i;
+            }
         }
+
         public Command EditProfileCommand
         {
             get { return new Command(DoEditProfile); }
@@ -37,8 +51,15 @@ namespace imPACt.ViewModels
 
         private async void DoEditProfile()
         {
-            var user = await FirebaseHelper.GetUserByUid(CrossFirebaseAuth.Current.Instance.CurrentUser.Uid);
-            await App.Current.MainPage.Navigation.PushAsync(new ProfilePage(user));
+            
+            var toUpdateUser = (await FirebaseHelper.firebase
+                .Child("Users")
+                .OnceAsync<User>()).Where(a => a.Object.Uid == CurrentUser.Uid).FirstOrDefault();
+
+            await FirebaseHelper.firebase
+            .Child("Users")
+            .Child(toUpdateUser.Key)
+            .PutAsync(new User() { School = CurrentUser.School, Degree = CurrentUser.Degree, PhotoUrl = CurrentUser.PhotoUrl});
         }
 
         private void DoLogout()

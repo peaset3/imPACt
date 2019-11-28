@@ -26,6 +26,7 @@ namespace imPACt.Views
             BindingContext = cpvm;            
             InitializeComponent();         
 
+
         }
 
     }

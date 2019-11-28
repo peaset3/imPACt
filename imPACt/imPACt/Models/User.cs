@@ -16,13 +16,12 @@ namespace imPACt.Models
         public byte AccountType { get; set; }
         public string PhotoUrl { get; set; }
 
-        public ImageSource PhotoSource 
-        { 
-            get
-            {
-                ImageSource i = new Uri(PhotoUrl);
-                return i;
-            } 
+        public ImageSource PhotoSource()
+        {
+
+            ImageSource i = new Uri(PhotoUrl);
+            return i;
+            
         }
         public string Fullname
         {

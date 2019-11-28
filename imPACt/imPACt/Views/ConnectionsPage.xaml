@@ -10,6 +10,7 @@
              Title="Connections"
              IconImageSource="link.png">
     <ContentPage.Content>
+
         <StackLayout x:Name="sl1">
             
             <Grid>
@@ -42,7 +43,7 @@
                                     <ColumnDefinition Width="2*"/>
                                     <ColumnDefinition Width="1*"/>
                                 </Grid.ColumnDefinitions>
-                                <Image Margin="20,5,0,5"  Grid.Column="0" Source="{Binding PhotoSource}" HeightRequest="50" WidthRequest="50"/>
+                                <Image x:Name="img" Margin="20,5,0,5" Source="{Binding PhotoSource}" Grid.Column="0" HeightRequest="50" WidthRequest="50"/>
                                 <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                                 <Button Margin="0,0,20,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
 

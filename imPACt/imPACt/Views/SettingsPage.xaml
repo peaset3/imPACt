@@ -10,9 +10,29 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding , StringFormat='Welcome {0}!'}" Margin="10"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
+            <Image Margin="0,10,0,10" Source="{Binding PhotoSource}" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"/>
+            <Label Text="{Binding CurrentUser.Fullname}" FontSize="26" HorizontalOptions="Center"/>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Margin="5,5,50,5" Grid.Row="0" Grid.Column="0" Text="Email" FontSize="14" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Entry Margin="10,0,30,5" Grid.Row="0" Grid.Column="1" Placeholder="{Binding CurrentUser.Email}" Text="{Binding CurrentUser.Email}" VerticalOptions="Center" />
+                <Label Margin="5,0,50,5" Grid.Row="1" Grid.Column="0" Text="School" FontSize="14" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Entry Margin="10,0,30,5" Grid.Row="1" Grid.Column="1" Placeholder="{Binding CurrentUser.School}" Text="{Binding CurrentUser.School}" VerticalOptions="Center" />
+                <Label Margin="5,0,50,5" Grid.Row="2" Grid.Column="0" Text="Degree" FontSize="14" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Entry Margin="10,0,30,5" Grid.Row="2" Grid.Column="1" Placeholder="{Binding CurrentUser.Degree}" Text="{Binding CurrentUser.Degree}" VerticalOptions="Center" />
+                <Label Margin="5,0,50,5" Grid.Row="3" Grid.Column="0" Text="Picture" FontSize="14" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Entry Margin="10,0,30,5" Grid.Row="3" Grid.Column="1" Placeholder="{Binding CurrentUser.PhotoUrl}" Text="{Binding CurrentUser.PhotoUrl}" VerticalOptions="Center" />
+
+            </Grid>
             <Button x:Name="editprofile" Text="Edit Profile" Command="{Binding EditProfileCommand}"/>
             <Button x:Name="logoutbtn" Text="Logout" Command="{Binding LogoutCommand}"/>
         </StackLayout>
