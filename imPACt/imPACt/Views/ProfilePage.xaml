@@ -7,7 +7,7 @@
              x:Class="imPACt.Views.ProfilePage">
     <ContentPage.Content>
         <StackLayout>
-            <Image Source="{Binding PhotoSource}" HeightRequest="100" WidthRequest="100"/>
+            <Image Source="{Binding PhotoSource}" Margin="0,15,0,15" HeightRequest="120" WidthRequest="1120"/>
             <Label Text="{Binding Surname}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

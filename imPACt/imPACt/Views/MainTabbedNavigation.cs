@@ -30,6 +30,8 @@ namespace imPACt.Views
             SettingsTab.IconImageSource = "settings.png";
             SettingsTab.Title = "Settings";
             this.Children.Add(SettingsTab);
+
+            (this as TabbedPage).CurrentPage = (this as TabbedPage).Children[1];
         }
     }
 }

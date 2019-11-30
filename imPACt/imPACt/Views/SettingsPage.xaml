@@ -10,7 +10,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Image Margin="0,10,0,10" Source="{Binding PhotoSource}" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"/>
+            <Image Margin="0,10,0,10" Source="{Binding PhotoSource}" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center"/>
             <Label Text="{Binding CurrentUser.Fullname}" FontSize="26" HorizontalOptions="Center"/>
             <Grid >
                 <Grid.RowDefinitions>
