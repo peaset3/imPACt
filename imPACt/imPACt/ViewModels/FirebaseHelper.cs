@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using imPACt.Models;
+using System.Collections.ObjectModel;
 
 namespace imPACt.ViewModels
 {
@@ -42,7 +43,7 @@ namespace imPACt.ViewModels
             }
         }
 
-        public static async Task<List<User>> GetAllConnections(string uid) 
+        public static async Task<ObservableCollection<User>> GetAllConnections(string uid) 
         {
 
             var users = await firebase
@@ -56,7 +57,7 @@ namespace imPACt.ViewModels
                 .Child("Active Connections")
                 .OnceAsync<Key>());
             if (key_check.Count == 0)
-                return new List<User>();
+                return new ObservableCollection<User>();
             var keys = key_check
             .Select(item =>
                 new Key
@@ -65,9 +66,9 @@ namespace imPACt.ViewModels
                 }).ToList();
 
             if (keys.Count == 0)
-                return new List<User>();
+                return new ObservableCollection<User>();
 
-            var connections = new List<Connection>();
+            var connections = new ObservableCollection<Connection>();
 
             foreach (Key k in keys)
             {
@@ -77,7 +78,7 @@ namespace imPACt.ViewModels
                     .OnceSingleAsync<Connection>());
             }
 
-            List<User> connected_users = new List<User>();
+            ObservableCollection<User> connected_users = new ObservableCollection<User>();
 
             if (user.Object.AccountType == 1)
             {

@@ -39,31 +39,8 @@ namespace imPACt.ViewModels
             get { return user.Uid; }
         }
 
-        
-        /*private ObservableCollection<User> currentConnections;
 
-        public ObservableCollection<User> CurrentConnections
-        {
-            get
-            {
-                if (currentConnections == null)
-                {
-                    currentConnections = Task.Run(() => this.FindCurrentConnections()).Result;
-                }
-                return currentConnections;
-            }
-        }
 
-        private async Task<ObservableCollection<User>> FindCurrentConnections()
-        {
-            ObservableCollection<User> currConn = new ObservableCollection<User>();
-            foreach(User u in FirebaseHelper.GetAllConnections(Uid).Result)
-            {
-                currConn.Add(u);
-            }
-            return currConn;
-        }
-        */
         ObservableCollection<User> potentialConnections;
 
         public ObservableCollection<User> PotentialConnections { 
@@ -76,8 +53,8 @@ namespace imPACt.ViewModels
             }
         }
 
-        private List<User> connections;
-        public List<User> Connections
+        private ObservableCollection<User> connections;
+        public ObservableCollection<User> Connections
         {
             get
             {
@@ -85,7 +62,7 @@ namespace imPACt.ViewModels
                 {
                     var conn = Task.Run(() => this.GetConnections()).Result;
                     if (conn == null)
-                        connections = new List<User>();
+                        connections = new ObservableCollection<User>();
                     else
                         connections = conn;
                 }
@@ -95,6 +72,12 @@ namespace imPACt.ViewModels
                 
             set { connections = value; }
         }
+
+        public ImageSource getImg(User u)
+        {
+            ImageSource i = new Uri(u.PhotoUrl);
+            return i;
+        }
         public ConnectionsPageViewModel()
         {
             user = CrossFirebaseAuth.Current.Instance.CurrentUser;
@@ -103,12 +86,12 @@ namespace imPACt.ViewModels
 
         public Command AddConnectionCommand
         {
-            get { return new Command(AddConnection); }
+            get { return new Command<string>((x) => AddConnection(x)); }
         }
-        private async void AddConnection()
+        private async void AddConnection(string uid)
         {
             Bitmap v;
-            var requestingTo = await FirebaseHelper.GetUserByEmail(RequestEmail);
+            var requestingTo = await FirebaseHelper.GetUserByUid(uid);
             var requestorInfo = await FirebaseHelper.GetUserByUid(this.CurrentUid);
             if (requestingTo != null)
             {
@@ -132,6 +115,8 @@ namespace imPACt.ViewModels
             }
             else
                 await App.Current.MainPage.DisplayAlert("Error", "User not found. Please try again.", "OK");
+            connections.Add(requestingTo);
+            potentialConnections.Remove(potentialConnections.Where(i => i.Uid == requestingTo.Uid).Single());
         }
 
         public Command GotoProfileCommand
@@ -184,7 +169,7 @@ namespace imPACt.ViewModels
         }
 
 
-        public async Task<List<User>> GetConnections()
+        public async Task<ObservableCollection<User>> GetConnections()
         {
             var temp = await FirebaseHelper.GetAllConnections(this.CurrentUid);
             return temp;

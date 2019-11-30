@@ -1,14 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:xreference="clr-namespace:Xamarin.Forms.Xaml"
+             xmlns:converters="clr-namespace:imPACt.Models"
              mc:Ignorable="d"
              x:Name="connectionspage"
              x:Class="imPACt.Views.ConnectionsPage"
              Title="Connections"
              IconImageSource="link.png">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:GetImg x:Key="GetImg"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
 
         <StackLayout x:Name="sl1">
@@ -36,14 +42,14 @@
 
                             <Grid >
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*" />
+                                    <RowDefinition Height="2.5*" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="2*"/>
                                     <ColumnDefinition Width="1*"/>
                                 </Grid.ColumnDefinitions>
-                                <Image x:Name="img" Margin="20,5,0,5" Source="{Binding PhotoSource}" Grid.Column="0" HeightRequest="50" WidthRequest="50"/>
+                                <Image x:Name="img" Margin="20,5,0,5" Source="{Binding PhotoUrl, Converter={StaticResource GetImg}, ConverterParameter={Binding PhotoUrl}}" Grid.Column="0" HeightRequest="60" WidthRequest="60"/>
                                 <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                                 <Button Margin="0,0,20,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
 
@@ -63,18 +69,19 @@
                             
                                 <Grid >
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*" />                                       
+                                        <RowDefinition Height="2.5*" />                                       
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="2*"/>
                                         <ColumnDefinition Width="1*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Margin="20,5,0,5"  Grid.Column="0" Source="{Binding PhotoSource}" HeightRequest="50" WidthRequest="50"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Margin="20,5,0,5"  Grid.Column="0" Source="{Binding PhotoUrl, Converter={StaticResource GetImg}, ConverterParameter={Binding PhotoUrl}}" HeightRequest="60" WidthRequest="60"/>
                                     <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                                    <Button Margin="0,0,20,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
-
-                                </Grid>
+                                <Button Margin="0,0,0,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
+                                <Button Margin="0,0,20,0" Grid.Column="3" Text="Add" Command="{Binding Path=BindingContext.AddConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
+                            </Grid>
                             
                         </ViewCell>
                     </DataTemplate>
