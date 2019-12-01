@@ -27,7 +27,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Entry x:Name="Messageentry" Placeholder="Message" Text="{Binding Message}" Keyboard="Message" />
+            <Entry x:Name="Messageentry" Placeholder="Message" Text="{Binding Message}"/>
             <Button x:Name="signup" Text="Send" BackgroundColor="#3897F0" TextColor="White" Command="{Binding AddMessageCommand}" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" />
         </StackLayout>
     </ContentPage.Content>
