@@ -307,6 +307,51 @@ namespace imPACt.ViewModels
                 return false;
             }
         }
+
+        public static async Task<Connection> GetSpecificConnection(string uidCurrent, string uidOther)
+        {
+
+            var users = await firebase
+                .Child("Users")
+                .OnceAsync<User>();
+            var user = users.Where(a => a.Object.Uid == uidCurrent).FirstOrDefault();
+
+            var key_check = (await firebase
+                .Child("Users")
+                .Child(user.Key)
+                .Child("Active Connections")
+                .OnceAsync<Key>());
+            if (key_check.Count == 0)
+                return new Connection();
+            var keys = key_check
+            .Select(item =>
+                new Key
+                {
+                    Value = item.Object.Value
+                }).ToList();
+
+            if (keys.Count == 0)
+                return new Connection();
+
+            var connections = new ObservableCollection<Connection>();
+
+            foreach (Key k in keys)
+            {
+                connections.Add(await firebase
+                    .Child("Connections")
+                    .Child(k.Value)
+                    .OnceSingleAsync<Connection>());
+            }
+
+            foreach (Connection c in connections)
+            {
+                if ((c.MenteeUid == uidCurrent && c.MentorUid == uidOther) || (c.MenteeUid == uidCurrent && c.MenteeUid == uidOther))
+                {
+                    return c;
+                }
+            }
+            return new Connection();
+        }
     }
 }    
 

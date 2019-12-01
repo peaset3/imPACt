@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="imPACt.Views.ConversationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="messagelist" ItemsSource="{Binding Conversation}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2.5*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Entry x:Name="Messageentry" Placeholder="Message" Text="{Binding Message}" Keyboard="Message" />
+            <Button x:Name="signup" Text="Send" BackgroundColor="#3897F0" TextColor="White" Command="{Binding AddMessageCommand}" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
