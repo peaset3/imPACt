@@ -83,6 +83,42 @@ namespace imPACt.ViewModels
             user = CrossFirebaseAuth.Current.Instance.CurrentUser;
         }
 
+        public Command RemoveConnectionCommand
+        {
+            get { return new Command<string>((x) => RemoveConnection(x)); }
+        }
+
+        private async void RemoveConnection(string uid)
+        {
+            Bitmap v;
+            var requestingTo = await FirebaseHelper.GetUserByUid(uid);
+            var requestorInfo = await FirebaseHelper.GetUserByUid(this.CurrentUid);
+            if (requestingTo != null)
+            {
+                if ((requestingTo.AccountType == 2 && requestorInfo.AccountType == 1))
+                {
+                    await FirebaseHelper.RemoveUserConnection(this.CurrentUid, requestingTo.Uid);
+                    await App.Current.MainPage.DisplayAlert("Success", "Accounts successfully unlinked.", "OK");
+                }
+                else if (requestingTo.AccountType == 1 && requestorInfo.AccountType == 2)
+                {
+                    await FirebaseHelper.RemoveUserConnection(requestingTo.Uid, this.CurrentUid);
+                    await App.Current.MainPage.DisplayAlert("Success", "Accounts successfully unlinked.", "OK");
+                }
+                else
+                {
+                    if (requestorInfo.AccountType == 1)
+                        await App.Current.MainPage.DisplayAlert("Error", "Mentee Accounts can only link with Mentor accounts.", "OK");
+                    else
+                        await App.Current.MainPage.DisplayAlert("Error", "Mentor Accounts can only link with Mentee accounts.", "OK");
+                }
+            }
+            else
+                await App.Current.MainPage.DisplayAlert("Error", "User not found. Please try again.", "OK");
+
+            potentialConnections.Add(requestingTo);
+            connections.Remove(connections.Where(i => i.Uid == requestingTo.Uid).FirstOrDefault());
+            }
 
         public Command AddConnectionCommand
         {
@@ -116,7 +152,7 @@ namespace imPACt.ViewModels
             else
                 await App.Current.MainPage.DisplayAlert("Error", "User not found. Please try again.", "OK");
             connections.Add(requestingTo);
-            potentialConnections.Remove(potentialConnections.Where(i => i.Uid == requestingTo.Uid).Single());
+            potentialConnections.Remove(potentialConnections.Where(i => i.Uid == requestingTo.Uid).FirstOrDefault());
         }
 
         public Command GotoProfileCommand

@@ -308,6 +308,60 @@ namespace imPACt.ViewModels
             }
         }
 
+        public static async Task<bool> RemoveUserConnection(string menteeuid, string mentorUid)
+        {
+            try
+            {
+                var toDeleteConnection = (await firebase
+                    .Child("Connections")
+                    .OnceAsync<Connection>()).Where(a =>
+                    a.Object.MenteeUid == menteeuid &&
+                    a.Object.MentorUid == mentorUid).FirstOrDefault();
+                await firebase.Child("Connections").Child(toDeleteConnection.Key).DeleteAsync();
+
+                var toUpdateUser = (await firebase
+                    .Child("Users")
+                    .OnceAsync<User>()).Where(a => a.Object.Uid == menteeuid).FirstOrDefault();
+
+                var active_connections = (await firebase
+                    .Child("Users")
+                    .Child(toUpdateUser.Key)
+                    .Child("Active Connections")
+                    .OnceAsync<Key>()).Where(a => a.Object.Value == toDeleteConnection.Key).FirstOrDefault();
+
+                await firebase
+                    .Child("Users")
+                    .Child(toUpdateUser.Key)
+                    .Child("Active Connections")
+                    .Child(active_connections.Key)
+                    .DeleteAsync();
+
+                toUpdateUser = (await firebase
+                    .Child("Users")
+                    .OnceAsync<User>()).Where(a => a.Object.Uid == mentorUid).FirstOrDefault();
+
+                active_connections = (await firebase
+                    .Child("Users")
+                    .Child(toUpdateUser.Key)
+                    .Child("Active Connections")
+                    .OnceAsync<Key>()).Where(a => a.Object.Value == toDeleteConnection.Key).FirstOrDefault();
+
+                await firebase
+                    .Child("Users")
+                    .Child(toUpdateUser.Key)
+                    .Child("Active Connections")
+                    .Child(active_connections.Key)
+                    .DeleteAsync();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Error:{e}");
+                return false;
+            }
+        }
+
         public static async Task<Connection> GetSpecificConnection(string uidCurrent, string uidOther)
         {
 
