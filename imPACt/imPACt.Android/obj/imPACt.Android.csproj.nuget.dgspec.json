@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj": {}
+    "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj": {
+    "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj",
         "projectName": "imPACt.Android",
-        "projectPath": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj",
-        "packagesPath": "C:\\Users\\bmmar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt.Android\\obj\\",
+        "projectPath": "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt.Android\\imPACt.Android.csproj",
+        "packagesPath": "C:\\Users\\Jamess\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\bmmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jamess\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\imPACt.csproj": {
-                "projectPath": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\imPACt.csproj"
+              "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt\\imPACt.csproj": {
+                "projectPath": "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt\\imPACt.csproj"
               }
             }
           }
@@ -110,21 +110,20 @@
         }
       }
     },
-    "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\imPACt.csproj": {
+    "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt\\imPACt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
+        "projectUniqueName": "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
         "projectName": "imPACt",
-        "projectPath": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
-        "packagesPath": "C:\\Users\\bmmar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bmmar\\source\\repos\\imPACt\\imPACt\\imPACt\\obj\\",
+        "projectPath": "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt\\imPACt.csproj",
+        "packagesPath": "C:\\Users\\Jamess\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jamess\\Documents\\GitHub\\imPACt\\imPACt\\imPACt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\bmmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jamess\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

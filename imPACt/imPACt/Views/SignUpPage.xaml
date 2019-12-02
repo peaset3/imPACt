@@ -4,42 +4,39 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="imPACt.Views.SignUpPage">
+             x:Class="imPACt.Views.SignUpPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="background.png"
+             >
+    
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
-            <Image Source="impact.png" HeightRequest="100" VerticalOptions="EndAndExpand" />
-            <Picker Title="Account Type" ItemsSource="{Binding AccountTypes}" SelectedItem="{Binding AccountTypeString, Mode=TwoWay}" >
-                
-            </Picker>
-            <Entry x:Name="Emailentery" Placeholder="School Email" Text="{Binding Email}" Keyboard="Email" />
-            <Entry x:Name="passwordentery" Placeholder="Password" Text="{Binding Password}" IsPassword="True" />
-            <Entry x:Name="cfmpasswordentery" Placeholder="Re-Enter Password" Text="{Binding ConfirmPassword}" IsPassword="True" />
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Image Source="impact_icon.png" HeightRequest="180" Margin="0,90,0,0" />
             <StackLayout Orientation="Horizontal">
-            <Entry x:Name="Surname" Placeholder="First Name" HorizontalOptions="FillAndExpand" Text="{Binding Surname}" />
-            <Entry x:Name="Lastname" Placeholder="Last Name" HorizontalOptions="FillAndExpand" Text="{Binding Lastname}" />
+                <Picker Title="Account Type" TitleColor="White" ItemsSource="{Binding AccountTypes}" SelectedItem="{Binding AccountTypeString, Mode=TwoWay}" Margin="20,0,0,0" >
+                </Picker>
+                <Entry x:Name="Emailentery" Placeholder="School Email" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding Email}" Keyboard="Email" Margin="60,0,20,0" />
             </StackLayout>
-            <Entry x:Name="School" Placeholder="School Name" Text="{Binding School}" />
-            <Entry x:Name="Degree" Placeholder="Area of Study" Text="{Binding Degree}" />
+            <Entry x:Name="passwordentery" Placeholder="Password" PlaceholderColor="White" Text="{Binding Password}" IsPassword="True" Margin="20,0,20,0" />
+            <Entry x:Name="cfmpasswordentery" Placeholder="Re-Enter Password" PlaceholderColor="White" Text="{Binding ConfirmPassword}" IsPassword="True" Margin="20,0,20,0" />
             <StackLayout Orientation="Horizontal">
-                <Label Text="Save Password" />
-                <Switch OnColor="#485992" IsToggled="False" />
+                <Entry x:Name="Surname" Placeholder="First Name" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding Surname}"  Margin="20,0,0,0" />
+                <Entry x:Name="Lastname" Placeholder="Last Name" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding Lastname}" Margin="0,0,20,0" />
             </StackLayout>
-            <Button x:Name="signup" Text="SignUp" BackgroundColor="#3897F0" TextColor="White" Command="{Binding SignUpCommand}" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" />
-            <Grid Grid.Row="5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
-                <Label Text="OR" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0" />
-                <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
-            </Grid>
-            <StackLayout Orientation="Horizontal" Grid.Row="6" HorizontalOptions="Center">
+            <Entry x:Name="School" Placeholder="School Name" PlaceholderColor="White" Text="{Binding School}" Margin="20,0,20,0" />
+            <Entry x:Name="Degree" Placeholder="Area of Study" PlaceholderColor="White" Text="{Binding Degree}" Margin="20,0,20,0" />
+            <Button x:Name="signup" Text="SignUp" BackgroundColor="#083c8c" TextColor="White" Command="{Binding SignUpCommand}" HeightRequest="50" VerticalOptions="Start" BorderWidth="1" BorderColor="Black" Margin="20,0,20,0" />
+
+            <StackLayout>
                 <Label x:Name="signupbtn"
-                           TextColor="#485992"
-                           FontSize="16"
-                           Text="Already have account? Sign in">
+                       TextColor="Black"
+                       FontSize="16"
+                       TextDecorations="Underline"
+                       Text="Already have account? Sign in."
+                       VerticalOptions="FillAndExpand" 
+                       VerticalTextAlignment="Center" 
+                       HorizontalTextAlignment="Center"
+                       Margin="0,80,0,0">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SignInCommand}" />
                     </Label.GestureRecognizers>

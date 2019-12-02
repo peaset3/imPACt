@@ -4,12 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="imPACt.MainPage">
+             x:Class="imPACt.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="background.png"
+             >
 
     <StackLayout VerticalOptions="Center">
-        <Image Source="impact_icon.png" HeightRequest="130" />
+        <Image Source="impact_icon.png" HeightRequest="200" />
         <Label Text="Welcome to imPACt!" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,10" FontSize="30" TextColor="Black" />
-        <Button x:Name= "loginbtn" Text = "Login " BackgroundColor="#3897F0" TextColor="White" WidthRequest="100" HorizontalOptions="Center" Command="{Binding LoginCommand}" />
+        <Button x:Name= "loginbtn" Text = "Login " BackgroundColor="#083c8c" TextColor="White" WidthRequest="100" HorizontalOptions="Center" Command="{Binding LoginCommand}" BorderWidth="1" BorderColor="Black" />
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -17,10 +20,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Label BackgroundColor="#bababa" HeightRequest="1" VerticalOptions="Center" WidthRequest="100" HorizontalOptions="Center" />
-            <Label Text="OR" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0" />
+            <Label Text="OR" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0" TextColor="Black" />
             <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" VerticalOptions="Center" WidthRequest="100" HorizontalOptions="Center" />
         </Grid>
-        <Button x:Name="signup" Text="SignUp" BackgroundColor="#3897F0" TextColor="White" WidthRequest="100" HorizontalOptions="Center" Command="{Binding SignUpCommand}" />
+        <Button x:Name="signup" Text="SignUp" BackgroundColor="#083c8c" TextColor="White" WidthRequest="100" HorizontalOptions="Center" Command="{Binding SignUpCommand}" BorderWidth="1" BorderColor="Black" />
     </StackLayout>
 
 </ContentPage>
