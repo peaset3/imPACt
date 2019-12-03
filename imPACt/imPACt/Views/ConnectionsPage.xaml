@@ -53,8 +53,8 @@
                                 </Grid.ColumnDefinitions>
                                 <Image x:Name="img" Margin="20,5,0,5" Source="{Binding PhotoUrl, Converter={StaticResource GetImg}, ConverterParameter={Binding PhotoUrl}}" Grid.Column="0" HeightRequest="60" WidthRequest="60"/>
                                 <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="White"/>
-                                <Button Margin="0,0,0,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
-                                <Button Margin="0,0,20,0" Grid.Column="3" Text="Remove" Command="{Binding Path=BindingContext.RemoveConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}" />
+                                <Button BackgroundColor="#083c8c" TextColor="White" Margin="0,3,0,3" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}" BorderWidth="1" BorderColor="Black" CornerRadius="20"/>
+                                <Button BackgroundColor="#083c8c" TextColor="White" Margin="0,3,20,3" Grid.Column="3" Text="Remove" Command="{Binding Path=BindingContext.RemoveConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}" BorderWidth="1" BorderColor="Black" CornerRadius="20" />
                             </Grid>
 
                         </ViewCell>
@@ -62,7 +62,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Label BackgroundColor="Black" HeightRequest="1" VerticalOptions="Center" WidthRequest="1000" HorizontalOptions="Center" />
+            <Label BackgroundColor="White" HeightRequest="1" VerticalOptions="Center" WidthRequest="1000" HorizontalOptions="Center" />
             <Label Text="Suggested Connections" HorizontalOptions="Center" FontSize="20" TextColor="White"/>
             <ListView x:Name="SuggestedConnections" ItemsSource="{Binding PotentialConnections}">
                 <ListView.ItemTemplate>
@@ -81,8 +81,8 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Margin="20,5,0,5"  Grid.Column="0" Source="{Binding PhotoUrl, Converter={StaticResource GetImg}, ConverterParameter={Binding PhotoUrl}}" HeightRequest="60" WidthRequest="60"/>
                                 <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="White"/>
-                                <Button Margin="0,0,0,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionConnectCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
-                                <Button Margin="0,0,20,0" Grid.Column="3" Text="Add" Command="{Binding Path=BindingContext.AddConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
+                                <Button BackgroundColor="#083c8c" TextColor="White" Margin="0,3,0,3" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionConnectCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}" BorderWidth="1" BorderColor="Black" CornerRadius="20"/>
+                                <Button BackgroundColor="#083c8c" TextColor="White" Margin="0,3,20,3" Grid.Column="3" Text="Add" Command="{Binding Path=BindingContext.AddConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}" BorderWidth="1" BorderColor="Black" CornerRadius="20"/>
                             </Grid>
                             
                         </ViewCell>
@@ -92,8 +92,8 @@
 
 
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="requestconn" Placeholder="Request connection by email" Text="{Binding RequestEmail}" PlaceholderColor="White" HorizontalOptions="Center" />
-                <Button x:Name="requestbtn" Text="Add" Margin="0,0,20,0" Grid.Column="3" Command="{Binding AddConnectionCommand}" />
+                <Entry x:Name="requestconn" Margin="15,0,10,0" Placeholder="Request connection by email" Text="{Binding RequestEmail}" PlaceholderColor="White" HorizontalOptions="Center" />
+                <Button x:Name="requestbtn" BackgroundColor="#083c8c" TextColor="White" Text="Add" Margin="0,5,5,5" Grid.Column="3" Command="{Binding AddConnectionCommand}" BorderWidth="1" BorderColor="Black" CornerRadius="20" />
             </StackLayout>
 
         </StackLayout>

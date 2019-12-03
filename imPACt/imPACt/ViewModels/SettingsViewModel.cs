@@ -59,7 +59,8 @@ namespace imPACt.ViewModels
             await FirebaseHelper.firebase
             .Child("Users")
             .Child(toUpdateUser.Key)
-            .PutAsync(new User() { School = CurrentUser.School, Degree = CurrentUser.Degree, PhotoUrl = CurrentUser.PhotoUrl});
+            .PutAsync(new User() { Surname = CurrentUser.Surname, Lastname = CurrentUser.Lastname, Bio = CurrentUser.Bio, Email = CurrentUser.Email, 
+                Uid = CurrentUser.Uid, AccountType = CurrentUser.AccountType, School = CurrentUser.School, Degree = CurrentUser.Degree, PhotoUrl = CurrentUser.PhotoUrl});
         }
 
         private void DoLogout()
