@@ -22,7 +22,7 @@
                 <Image Source="CurvedMask.png" VerticalOptions="End" Aspect="AspectFill" Margin="0,0,0,-1"/>
 
                 <!-- profile image -->
-                <Frame Margin="0,0,0,-50"
+                <Frame Margin="0,15,0,-50"
                    BorderColor="Black"
                    CornerRadius="100"
                    HeightRequest="145"
