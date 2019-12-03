@@ -6,12 +6,23 @@
              mc:Ignorable="d"
              x:Class="imPACt.Views.SettingsPage"
              Title="Settings"
-             IconImageSource="settings.png">
+             IconImageSource="settings.png"
+             BackgroundImageSource="background.png">
 
     <ContentPage.Content>
         <StackLayout>
-            <Image Margin="0,10,0,10" Source="{Binding PhotoSource}" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center"/>
-            <Label Text="{Binding CurrentUser.Fullname}" FontSize="26" HorizontalOptions="Center"/>
+            <Frame Margin="0,15,0,0"
+                   BorderColor="Black"
+                   CornerRadius="100"
+                   HeightRequest="145"
+                   WidthRequest="145"
+                   IsClippedToBounds="True"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End">
+                <Image Source="{Binding PhotoSource}" Aspect="AspectFill" Margin="-20" HeightRequest="100" WidthRequest="100" />
+            </Frame>
+ 
+            <Label Text="{Binding CurrentUser.Fullname}" FontSize="26" HorizontalOptions="Center" TextColor="White" />
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*" />
@@ -23,14 +34,14 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Label Margin="5,5,50,5" Grid.Row="0" Grid.Column="0" Text="Email" FontSize="14" HorizontalOptions="End" VerticalOptions="Center"/>
-                <Entry Margin="10,0,30,5" Grid.Row="0" Grid.Column="1" Placeholder="{Binding CurrentUser.Email}" Text="{Binding CurrentUser.Email}" VerticalOptions="Center" />
-                <Label Margin="5,0,50,5" Grid.Row="1" Grid.Column="0" Text="School" FontSize="14" HorizontalOptions="End" VerticalOptions="Center"/>
-                <Entry Margin="10,0,30,5" Grid.Row="1" Grid.Column="1" Placeholder="{Binding CurrentUser.School}" Text="{Binding CurrentUser.School}" VerticalOptions="Center" />
-                <Label Margin="5,0,50,5" Grid.Row="2" Grid.Column="0" Text="Degree" FontSize="14" HorizontalOptions="End" VerticalOptions="Center"/>
-                <Entry Margin="10,0,30,5" Grid.Row="2" Grid.Column="1" Placeholder="{Binding CurrentUser.Degree}" Text="{Binding CurrentUser.Degree}" VerticalOptions="Center" />
-                <Label Margin="5,0,50,5" Grid.Row="3" Grid.Column="0" Text="Picture" FontSize="14" HorizontalOptions="End" VerticalOptions="Center"/>
-                <Entry Margin="10,0,30,5" Grid.Row="3" Grid.Column="1" Placeholder="{Binding CurrentUser.PhotoUrl}" Text="{Binding CurrentUser.PhotoUrl}" VerticalOptions="Center" />
+                <Label Margin="5,5,50,5" Grid.Row="0" Grid.Column="0" Text="Email" FontSize="14" HorizontalOptions="End" VerticalOptions="Center" TextColor="White" />
+                <Entry Margin="10,0,30,5" Grid.Row="0" Grid.Column="1" Placeholder="{Binding CurrentUser.Email}" Text="{Binding CurrentUser.Email}" VerticalOptions="Center" TextColor="White" />
+                <Label Margin="5,0,50,5" Grid.Row="1" Grid.Column="0" Text="School" FontSize="14" HorizontalOptions="End" VerticalOptions="Center" TextColor="White" />
+                <Entry Margin="10,0,30,5" Grid.Row="1" Grid.Column="1" Placeholder="{Binding CurrentUser.School}" Text="{Binding CurrentUser.School}" VerticalOptions="Center" TextColor="White" />
+                <Label Margin="5,0,50,5" Grid.Row="2" Grid.Column="0" Text="Degree" FontSize="14" HorizontalOptions="End" VerticalOptions="Center" TextColor="White" />
+                <Entry Margin="10,0,30,5" Grid.Row="2" Grid.Column="1" Placeholder="{Binding CurrentUser.Degree}" Text="{Binding CurrentUser.Degree}" VerticalOptions="Center" TextColor="White" />
+                <Label Margin="5,0,50,5" Grid.Row="3" Grid.Column="0" Text="Picture" FontSize="14" HorizontalOptions="End" VerticalOptions="Center" TextColor="White" />
+                <Entry Margin="10,0,30,5" Grid.Row="3" Grid.Column="1" Placeholder="{Binding CurrentUser.PhotoUrl}" Text="{Binding CurrentUser.PhotoUrl}" VerticalOptions="Center" TextColor="White" />
 
             </Grid>
             <Button x:Name="editprofile" Text="Edit Profile"  Command="{Binding EditProfileCommand}" Margin="20,0,20,0" VerticalOptions="End" BackgroundColor="#083c8c" TextColor="White" CornerRadius="20" />

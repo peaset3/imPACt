@@ -9,7 +9,8 @@
              x:Name="connectionspage"
              x:Class="imPACt.Views.ConnectionsPage"
              Title="Connections"
-             IconImageSource="link.png">
+             IconImageSource="link.png"
+             BackgroundImageSource="background.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:GetImg x:Key="GetImg"/>
@@ -34,7 +35,7 @@
             </Grid>
 
 
-            <Label Text="Active Connections" HorizontalOptions="Center" FontSize="20"/>
+            <Label Text="Active Connections" HorizontalOptions="Center" FontSize="20" TextColor="White"/>
             <ListView x:Name="connectionslist" ItemsSource="{Binding Connections}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -51,9 +52,9 @@
                                     <ColumnDefinition Width="2*"/>
                                 </Grid.ColumnDefinitions>
                                 <Image x:Name="img" Margin="20,5,0,5" Source="{Binding PhotoUrl, Converter={StaticResource GetImg}, ConverterParameter={Binding PhotoUrl}}" Grid.Column="0" HeightRequest="60" WidthRequest="60"/>
-                                <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="White"/>
                                 <Button Margin="0,0,0,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
-                                <Button Margin="0,0,20,0" Grid.Column="3" Text="Remove" Command="{Binding Path=BindingContext.RemoveConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
+                                <Button Margin="0,0,20,0" Grid.Column="3" Text="Remove" Command="{Binding Path=BindingContext.RemoveConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}" />
                             </Grid>
 
                         </ViewCell>
@@ -61,8 +62,8 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-
-            <Label Text="Suggested Connections" HorizontalOptions="Center" FontSize="20"/>
+            <Label BackgroundColor="Black" HeightRequest="1" VerticalOptions="Center" WidthRequest="1000" HorizontalOptions="Center" />
+            <Label Text="Suggested Connections" HorizontalOptions="Center" FontSize="20" TextColor="White"/>
             <ListView x:Name="SuggestedConnections" ItemsSource="{Binding PotentialConnections}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -76,10 +77,10 @@
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="2*"/>
                                         <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="2*"/>
                                 </Grid.ColumnDefinitions>
                                 <Image Margin="20,5,0,5"  Grid.Column="0" Source="{Binding PhotoUrl, Converter={StaticResource GetImg}, ConverterParameter={Binding PhotoUrl}}" HeightRequest="60" WidthRequest="60"/>
-                                    <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="White"/>
                                 <Button Margin="0,0,0,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
                                 <Button Margin="0,0,20,0" Grid.Column="3" Text="Add" Command="{Binding Path=BindingContext.AddConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
                             </Grid>
@@ -89,11 +90,12 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-         
-            
-            <Entry x:Name="requestconn" Placeholder="Request connection by email" Text="{Binding RequestEmail}" />
-            <Button x:Name="requestbtn" Text="Add Connection" BackgroundColor="#083c8c" TextColor="White" WidthRequest="200" HorizontalOptions="Center" Command="{Binding AddConnectionCommand}" CornerRadius="20" />
-        
+
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="requestconn" Placeholder="Request connection by email" Text="{Binding RequestEmail}" PlaceholderColor="White" HorizontalOptions="Center" />
+                <Button x:Name="requestbtn" Text="Add" Margin="0,0,20,0" Grid.Column="3" Command="{Binding AddConnectionCommand}" />
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
