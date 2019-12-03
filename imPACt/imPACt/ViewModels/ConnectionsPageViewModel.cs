@@ -242,7 +242,5 @@ namespace imPACt.ViewModels
             }
             return new ObservableCollection<User>(mentors);
         }
-
-        
     }
 }
