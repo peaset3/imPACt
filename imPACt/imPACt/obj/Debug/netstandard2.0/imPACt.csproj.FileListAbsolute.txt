@@ -93,3 +93,4 @@ C:\Users\quent\Source\Repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.
 C:\Users\quent\Source\Repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\ref\imPACt.dll
 C:\Users\quent\Source\Repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt.pdb
 C:\Users\quent\Source\Repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\imPACt.csprojAssemblyReference.cache
+C:\Users\Bimst\Source\Repos\peaset3\imPACt\imPACt\imPACt\obj\Debug\netstandard2.0\Views\ConversationPage.xaml.g.cs

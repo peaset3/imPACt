@@ -18,7 +18,8 @@
           "System.Drawing.Common": "4.7.0-preview3.19551.4",
           "System.Drawing.Primitives": "4.3.0",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.4.0.991210-pre2"
+          "Xamarin.Forms": "4.4.0.991210-pre2",
+          "Mono.Android": "0.0.0.0"
         },
         "runtime": {
           "imPACt.dll": {}
@@ -751,6 +752,14 @@
             "fileVersion": "4.4.0.321"
           }
         }
+      },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
       }
     }
   },
@@ -969,6 +978,11 @@
       "sha512": "sha512-eRLbF7xisYzXrjKXzrHC2C1TV7jiXLeIoUWo2WDAkjUCf0vg032zZQ7y0E+CiMNP8C14rmcaKl/DMPB+U+JkRQ==",
       "path": "xamarin.forms/4.4.0.991210-pre2",
       "hashPath": "xamarin.forms.4.4.0.991210-pre2.nupkg.sha512"
+    },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
