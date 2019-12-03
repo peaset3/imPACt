@@ -16,6 +16,8 @@ namespace imPACt.Models
         public byte AccountType { get; set; }
         public string PhotoUrl { get; set; }
 
+        public string Bio { get; set; }
+
         public ImageSource PhotoSource()
         {
 
