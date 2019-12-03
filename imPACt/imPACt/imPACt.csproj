@@ -30,6 +30,9 @@
     <Compile Update="Views\EditProfilePage.xaml.cs">
       <DependentUpon>EditProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ProfilePageConnect.xaml.cs">
+      <DependentUpon>ProfilePageConnect.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>

@@ -204,6 +204,30 @@ namespace imPACt.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
         }
 
+        public Command GotoConnectionConnectCommand
+        {
+            get { return new Command<string>((x) => GotoConnectionProfilewConnect(x)); }
+        }
+
+        async void GotoConnectionProfilewConnect(string luid)
+        {
+            var user = await FirebaseHelper.GetUserByUid(luid);
+
+            if (user != null)
+            {
+
+                try
+                {
+                    await App.Current.MainPage.Navigation.PushAsync(new ProfilePageConnect(user));
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+            else
+                await App.Current.MainPage.DisplayAlert("Error", "No profile could be found. Please try again.", "OK");
+        }
 
         public async Task<ObservableCollection<User>> GetConnections()
         {

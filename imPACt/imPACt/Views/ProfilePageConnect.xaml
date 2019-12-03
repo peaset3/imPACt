@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="imPACt.Views.ProfilePageConnect"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="AUTO" />
+                </Grid.RowDefinitions>
+
+                <!-- header background -->
+                <Image Source="header.png" Aspect="AspectFill"/>
+                <Image Source="CurvedMask.png" VerticalOptions="End" Aspect="AspectFill" Margin="0,0,0,-1"/>
+
+                <!-- profile image -->
+                <Frame Margin="0,15,0,-50"
+                   BorderColor="Black"
+                   CornerRadius="100"
+                   HeightRequest="145"
+                   WidthRequest="145"
+                   IsClippedToBounds="True"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End">
+                    <Image Source="{Binding PhotoSource}" Aspect="AspectFill" Margin="-20" HeightRequest="100" WidthRequest="100" />
+                </Frame>
+
+                <!-- profile name & information -->
+                <StackLayout Grid.Row="1" HorizontalOptions="Center" Padding="0,50,0,00">
+                    <Label HorizontalTextAlignment="Center" TextColor="#585858" FontSize="35" FontAttributes="Bold" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding Surname}" />
+                                <Span Text=" " />
+                                <Span Text="{Binding Lastname}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalTextAlignment="Center" Text="{Binding Email}" FontSize="16" />
+                </StackLayout>
+
+                <!-- social -->
+                <Grid Grid.Row="2" ColumnSpacing="0" RowSpacing="0" Margin="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout>
+                        <Label HorizontalTextAlignment="Center" Text="{Binding AccountType}" Margin="0,10" FontSize="20" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1">
+                        <Label HorizontalTextAlignment="Center" Text="{Binding School}" Margin="0,10" FontSize="20" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="2">
+                        <Label HorizontalTextAlignment="Center" Text="{Binding Degree}" Margin="0,10" FontSize="20" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- profile description -->
+                <ScrollView Grid.Row="3" Margin="20,40,20,0">
+                    <Label>
+                        <Label.FormattedText Margin="20,0,20,0">
+                            <FormattedString>
+                                <Span Text="About Me:" FontAttributes="Bold" />
+                                <Span Text=" " />
+                                <Span Text="{Binding Bio}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </ScrollView>
+
+                <!-- message button not implemented -->
+                <Button Grid.Row="3" Text="Message" Margin="20,0,20,0" VerticalOptions="End" BackgroundColor="#083c8c" TextColor="White" CornerRadius="20" />
+                <!-- disconnect button not implemented -->
+                <Button Grid.Row="4" Text="Connect" Margin="20,0,20,0" VerticalOptions="End" BackgroundColor="green" TextColor="White" CornerRadius="20" /> 
+                
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

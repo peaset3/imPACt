@@ -81,7 +81,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Margin="20,5,0,5"  Grid.Column="0" Source="{Binding PhotoUrl, Converter={StaticResource GetImg}, ConverterParameter={Binding PhotoUrl}}" HeightRequest="60" WidthRequest="60"/>
                                 <Label Grid.Column="1" Text="{Binding Fullname}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="White"/>
-                                <Button Margin="0,0,0,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
+                                <Button Margin="0,0,0,0" Grid.Column="2" Text="View" Command="{Binding Path=BindingContext.GotoConnectionConnectCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
                                 <Button Margin="0,0,20,0" Grid.Column="3" Text="Add" Command="{Binding Path=BindingContext.AddConnectionCommand, Source= {x:Reference SuggestedConnections}}" CommandParameter="{Binding Uid}"/>
                             </Grid>
                             
