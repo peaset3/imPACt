@@ -13,23 +13,23 @@
         <StackLayout VerticalOptions="CenterAndExpand">
             <Image Source="impact_icon.png" HeightRequest="180" Margin="0,90,0,0" />
             <StackLayout Orientation="Horizontal">
-                <Picker Title="Account Type" TitleColor="White" ItemsSource="{Binding AccountTypes}" SelectedItem="{Binding AccountTypeString, Mode=TwoWay}" Margin="20,0,0,0" >
+                <Picker Title="Account Type" TitleColor="White" TextColor="White" ItemsSource="{Binding AccountTypes}" SelectedItem="{Binding AccountTypeString, Mode=TwoWay}" Margin="20,0,0,0" >
                 </Picker>
-                <Entry x:Name="Emailentery" Placeholder="School Email" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding Email}" Keyboard="Email" Margin="60,0,20,0" />
+                <Entry x:Name="Emailentery" TextColor="White" Placeholder="School Email" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding Email}" Keyboard="Email" Margin="60,0,20,0" />
             </StackLayout>
-            <Entry x:Name="passwordentery" Placeholder="Password" PlaceholderColor="White" Text="{Binding Password}" IsPassword="True" Margin="20,0,20,0" />
-            <Entry x:Name="cfmpasswordentery" Placeholder="Re-Enter Password" PlaceholderColor="White" Text="{Binding ConfirmPassword}" IsPassword="True" Margin="20,0,20,0" />
+            <Entry x:Name="passwordentery" Placeholder="Password" TextColor="White" PlaceholderColor="White" Text="{Binding Password}" IsPassword="True" Margin="20,0,20,0" />
+            <Entry x:Name="cfmpasswordentery" Placeholder="Re-Enter Password" TextColor="White" PlaceholderColor="White" Text="{Binding ConfirmPassword}" IsPassword="True" Margin="20,0,20,0" />
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="Surname" Placeholder="First Name" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding Surname}"  Margin="20,0,0,0" />
-                <Entry x:Name="Lastname" Placeholder="Last Name" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding Lastname}" Margin="0,0,20,0" />
+                <Entry x:Name="Surname" Placeholder="First Name" TextColor="White" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding Surname}"  Margin="20,0,0,0" />
+                <Entry x:Name="Lastname" Placeholder="Last Name" TextColor="White" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding Lastname}" Margin="0,0,20,0" />
             </StackLayout>
-            <Entry x:Name="School" Placeholder="School Name" PlaceholderColor="White" Text="{Binding School}" Margin="20,0,20,0" />
-            <Entry x:Name="Degree" Placeholder="Area of Study" PlaceholderColor="White" Text="{Binding Degree}" Margin="20,0,20,0" />
+            <Entry x:Name="School" Placeholder="School Name" TextColor="White" PlaceholderColor="White" Text="{Binding School}" Margin="20,0,20,0" />
+            <Entry x:Name="Degree" Placeholder="Area of Study" PlaceholderColor="White" TextColor="White" Text="{Binding Degree}" Margin="20,0,20,0" />
             <Button x:Name="signup" Text="SignUp" BackgroundColor="#083c8c" TextColor="White" Command="{Binding SignUpCommand}" HeightRequest="50" VerticalOptions="Start" BorderWidth="1" BorderColor="Black" Margin="20,0,20,0" CornerRadius="20" />
 
             <StackLayout>
                 <Label x:Name="signupbtn"
-                       TextColor="Black"
+                       TextColor="White"
                        FontSize="16"
                        TextDecorations="Underline"
                        Text="Already have account? Sign in."
