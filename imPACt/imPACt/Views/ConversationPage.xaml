@@ -4,31 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="Conversation"
              x:Class="imPACt.Views.ConversationPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="messagelist" ItemsSource="{Binding Conversation}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-
-                            <Grid >
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2.5*" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-                            </Grid>
-
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Entry x:Name="Messageentry" Placeholder="Message" Text="{Binding Message}"/>
-            <Button x:Name="signup" Text="Send" BackgroundColor="#3897F0" TextColor="White" Command="{Binding AddMessageCommand}" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout Padding="0,20,0,0">
+        <Label Text=" Hello there! " Margin="20" BackgroundColor="LightGray" HorizontalOptions="Start" />
+        <Label Text=" Nice to meet you! " Margin="20" BackgroundColor="LightBlue" HorizontalOptions="End" />
+        <Label Text=" I feel that our research interests align very well " BackgroundColor="LightGray" Margin="20" HorizontalOptions="Start" />
+        <Label Text=" Yes indeed! " Margin="20" BackgroundColor="LightBlue" HorizontalOptions="End" />
+        <Label Text=" his connection is going to be great for both of us! " Margin="20" BackgroundColor="LightGray" HorizontalOptions="Start" />
+    </StackLayout>
 </ContentPage>
