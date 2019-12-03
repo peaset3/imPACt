@@ -240,7 +240,7 @@ namespace imPACt.ViewModels
                     mentors.Remove(mentors.Where(i => i.Uid == u.Uid).FirstOrDefault());
                 }
             }
-            return new ObservableCollection<User>(localMentorsList);
+            return new ObservableCollection<User>(mentors);
         }
     }
 }
