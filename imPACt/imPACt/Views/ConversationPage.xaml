@@ -12,5 +12,10 @@
         <Label Text=" I feel that our research interests align very well " BackgroundColor="LightGray" Margin="20" HorizontalOptions="Start" />
         <Label Text=" Yes indeed! " Margin="20" BackgroundColor="LightBlue" HorizontalOptions="End" />
         <Label Text=" This connection is going to be great for both of us! " Margin="20" BackgroundColor="LightGray" HorizontalOptions="Start" />
+        <StackLayout Orientation="Horizontal">
+            <Entry x:Name="requestconn" Placeholder="Type your message here" HorizontalOptions="FillAndExpand" Margin="0,300,0,0"/>
+            <Button x:Name="requestbtn" Text="Send" Margin="0,300,0,0" Grid.Column="3" />
+        </StackLayout>
     </StackLayout>
+    
 </ContentPage>
