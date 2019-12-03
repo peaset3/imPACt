@@ -2693,3 +2693,5 @@ C:\Users\Jamess\Documents\GitHub\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp
 C:\Users\Jamess\Documents\GitHub\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Jamess\Documents\GitHub\imPACt\imPACt\imPACt.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\Jamess\Documents\GitHub\imPACt\imPACt\imPACt.Android\obj\Debug\90\res\drawable\background.png
+C:\Users\Jamess\Documents\GitHub\imPACt\imPACt\imPACt.Android\obj\Debug\90\res\drawable\header.png
+C:\Users\Jamess\Documents\GitHub\imPACt\imPACt\imPACt.Android\obj\Debug\90\res\drawable\curvedmask.png

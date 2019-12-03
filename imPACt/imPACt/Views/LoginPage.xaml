@@ -31,7 +31,7 @@
                 <Image Source="impact_icon.png" HeightRequest="200" VerticalOptions="EndAndExpand" />
                 <Entry x:Name = "Email" Grid.Row="1" Placeholder="Email" PlaceholderColor="White" Text="{Binding Email}" Keyboard = "Email" />
                 <Entry x:Name = "Password" Grid.Row="2" Placeholder="Password" PlaceholderColor="White" Text="{Binding Password}" IsPassword = "True" />
-                <Button x:Name= "loginbtn" Text = "Login " BackgroundColor="#083c8c" TextColor="White" Command="{Binding LoginCommand}" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" BorderWidth="1" BorderColor="Black" />
+                <Button x:Name= "loginbtn" Text = "Login " BackgroundColor="#083c8c" TextColor="White" Command="{Binding LoginCommand}" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" BorderWidth="1" BorderColor="Black" CornerRadius="20" />
                 <Label Text="Forgot Password? Get help signing in." HorizontalOptions="Center" Grid.Row="4" Margin="0,8,0,8" FontSize="16" TextColor="Black" FontAttributes="Italic" />
                 
             </Grid>

@@ -33,8 +33,8 @@
                 <Entry Margin="10,0,30,5" Grid.Row="3" Grid.Column="1" Placeholder="{Binding CurrentUser.PhotoUrl}" Text="{Binding CurrentUser.PhotoUrl}" VerticalOptions="Center" />
 
             </Grid>
-            <Button x:Name="editprofile" Text="Edit Profile" Command="{Binding EditProfileCommand}"/>
-            <Button x:Name="logoutbtn" Text="Logout" Command="{Binding LogoutCommand}"/>
+            <Button x:Name="editprofile" Text="Edit Profile"  Command="{Binding EditProfileCommand}" Margin="20,0,20,0" VerticalOptions="End" BackgroundColor="#083c8c" TextColor="White" CornerRadius="20" />
+            <Button x:Name="logoutbtn" Text="Logout" Command="{Binding LogoutCommand}" Margin="20,0,20,0" VerticalOptions="End" BackgroundColor="red" TextColor="White" CornerRadius="20" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

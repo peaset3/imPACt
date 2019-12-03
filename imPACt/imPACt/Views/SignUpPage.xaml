@@ -25,7 +25,7 @@
             </StackLayout>
             <Entry x:Name="School" Placeholder="School Name" PlaceholderColor="White" Text="{Binding School}" Margin="20,0,20,0" />
             <Entry x:Name="Degree" Placeholder="Area of Study" PlaceholderColor="White" Text="{Binding Degree}" Margin="20,0,20,0" />
-            <Button x:Name="signup" Text="SignUp" BackgroundColor="#083c8c" TextColor="White" Command="{Binding SignUpCommand}" HeightRequest="50" VerticalOptions="Start" BorderWidth="1" BorderColor="Black" Margin="20,0,20,0" />
+            <Button x:Name="signup" Text="SignUp" BackgroundColor="#083c8c" TextColor="White" Command="{Binding SignUpCommand}" HeightRequest="50" VerticalOptions="Start" BorderWidth="1" BorderColor="Black" Margin="20,0,20,0" CornerRadius="20" />
 
             <StackLayout>
                 <Label x:Name="signupbtn"

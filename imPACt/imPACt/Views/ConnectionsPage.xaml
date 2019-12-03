@@ -92,7 +92,7 @@
          
             
             <Entry x:Name="requestconn" Placeholder="Request connection by email" Text="{Binding RequestEmail}" />
-            <Button x:Name="requestbtn" Text="Add Connection" BackgroundColor="#3897F0" TextColor="White" WidthRequest="150" HorizontalOptions="Center" Command="{Binding AddConnectionCommand}" />
+            <Button x:Name="requestbtn" Text="Add Connection" BackgroundColor="#083c8c" TextColor="White" WidthRequest="200" HorizontalOptions="Center" Command="{Binding AddConnectionCommand}" CornerRadius="20" />
         
         </StackLayout>
     </ContentPage.Content>
