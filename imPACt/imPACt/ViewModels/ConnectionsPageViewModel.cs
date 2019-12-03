@@ -218,7 +218,7 @@ namespace imPACt.ViewModels
             var menteeUser = await FirebaseHelper.GetUserByUid(CrossFirebaseAuth.Current.Instance.CurrentUser.Uid);
 
 
-            var localMentorsList = (await firebase.Child("Users").OnceAsync<User>()).Select(item =>
+            var allMentorsList = (await firebase.Child("Users").OnceAsync<User>()).Select(item =>
                     new User
                     {
                         Uid = item.Object.Uid,
@@ -229,29 +229,16 @@ namespace imPACt.ViewModels
                         Degree = item.Object.Degree,
                         AccountType = item.Object.AccountType,
                         PhotoUrl = item.Object.PhotoUrl
-                    }).Where(item => item.School == menteeUser.School 
-                                  && item.Degree == menteeUser.Degree
+                    }).Where(item => item.Degree == menteeUser.Degree
                                   && item.AccountType != 1).ToList();
 
-
-            //Check first if there are any local mentors incase the mentee's school does not have mentors of requisite degree
-            var localMentorCount = localMentorsList.Count();
-            if (localMentorCount < 1)
+            var mentors = new List<User>(allMentorsList);
+            foreach (User u in allMentorsList)
             {
-                localMentorsList = (await firebase.Child("Users").OnceAsync<User>()).Select(item =>
-                    new User
-                    {
-                        Uid = item.Object.Uid,
-                        Email = item.Object.Email,
-                        Surname = item.Object.Surname,
-                        Lastname = item.Object.Lastname,
-                        School = item.Object.School,
-                        Degree = item.Object.Degree,
-                        AccountType = item.Object.AccountType,
-                        PhotoUrl = item.Object.PhotoUrl
-                    }).Where<User>(item => item.Degree == menteeUser.Degree
-                                        && item.AccountType != 1).ToList();
-                //If there are no local mentors, fetch ALL mentors with requisite degree
+                if (connections.Contains(connections.Where(i => i.Uid == u.Uid).FirstOrDefault()))
+                {
+                    mentors.Remove(mentors.Where(i => i.Uid == u.Uid).FirstOrDefault());
+                }
             }
             return new ObservableCollection<User>(localMentorsList);
         }
