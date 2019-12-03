@@ -32,7 +32,8 @@ namespace imPACt.ViewModels
                     School = item.Object.School,
                     Degree = item.Object.Degree,
                     AccountType = item.Object.AccountType,
-                    PhotoUrl = item.Object.PhotoUrl
+                    PhotoUrl = item.Object.PhotoUrl,
+                    Bio = item.Object.Bio
                 }).ToList();
                 return userlist;
             }
@@ -145,7 +146,7 @@ namespace imPACt.ViewModels
                 await firebase
                 .Child("Users")
                 .PostAsync(new User() { Email = email, Surname = surname, Lastname = lastname,
-                    School = school, Degree = degree, Uid = uid,
+                    School = school, Degree = degree, Uid = uid, Bio = "",
                     AccountType = type, PhotoUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
                 });
                 return true;

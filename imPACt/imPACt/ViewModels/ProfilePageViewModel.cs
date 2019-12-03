@@ -79,6 +79,11 @@ namespace imPACt.ViewModels
             get { return user.Email; }
         }
 
+        public string Bio
+        {
+            get { return user.Bio; }
+        }
+
         
     }
 }
